@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05C07625-C892-4FE9-9FD9-927F08407EB2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OTE</RootNamespace>
+    <AssemblyName>OTE</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DiaxeirhshExoplismouOTEDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiaxeirhshExoplismouOTEDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DiaxeirhshExoplismouOTEDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DiaxeirhshExoplismouOTEDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers.cs" />
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdministratorManagmentDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministratorManagmentDisplay.Designer.cs">
+      <DependentUpon>AdministratorManagmentDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModemInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModemInspection.Designer.cs">
+      <DependentUpon>ModemInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SAPDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SAPDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SapsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SapsManagement.Designer.cs">
+      <DependentUpon>SapsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SatInspection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SatInspection.Designer.cs">
+      <DependentUpon>SatInspection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersManagement.Designer.cs">
+      <DependentUpon>UsersManagement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministratorManagmentDisplay.resx">
+      <DependentUpon>AdministratorManagmentDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModemInspection.resx">
+      <DependentUpon>ModemInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="SapsManagement.resx">
+      <DependentUpon>SapsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SatInspection.resx">
+      <DependentUpon>SatInspection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersManagement.resx">
+      <DependentUpon>UsersManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DiaxeirhshExoplismouOTEDataSet.xsc">
+      <DependentUpon>DiaxeirhshExoplismouOTEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DiaxeirhshExoplismouOTEDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiaxeirhshExoplismouOTEDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiaxeirhshExoplismouOTEDataSet.xss">
+      <DependentUpon>DiaxeirhshExoplismouOTEDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DiaxeirhshExoplismouOTEDataSet1.xsc">
+      <DependentUpon>DiaxeirhshExoplismouOTEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DiaxeirhshExoplismouOTEDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DiaxeirhshExoplismouOTEDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DiaxeirhshExoplismouOTEDataSet1.xss">
+      <DependentUpon>DiaxeirhshExoplismouOTEDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SAPDataSet.xsc">
+      <DependentUpon>SAPDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SAPDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SAPDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SAPDataSet.xss">
+      <DependentUpon>SAPDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Logo.ico" />
+    <EmbeddedResource Include="Resources\LogoPlain.ico" />
+    <EmbeddedResource Include="Resources\Logo.jpg" />
+    <EmbeddedResource Include="Resources\LogoPlain.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
