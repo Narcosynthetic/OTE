@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace OTE
 {
-    public partial class UsersManagement : Form
+    public partial class frmUsersManagement : Form
     {
         #region Properties
         private int UserId
@@ -27,11 +27,11 @@ namespace OTE
 
         #endregion
 
-        public UsersManagement()
+        public frmUsersManagement()
         {
             InitializeComponent();
         }
-        public UsersManagement(string userName, int userId)
+        public frmUsersManagement(string userName, int userId)
         {
             InitializeComponent();
 

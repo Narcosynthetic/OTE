@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace OTE
 {
-    public partial class AdministratorManagmentDisplay : Form
+    public partial class frmSupervisorManagmentDisplay : Form
     {
         private int UserId
         {
@@ -24,7 +24,7 @@ namespace OTE
             set;
         }
 
-        public AdministratorManagmentDisplay(string userName, int userId)
+        public frmSupervisorManagmentDisplay(string userName, int userId)
         {
             InitializeComponent();
 
@@ -34,28 +34,28 @@ namespace OTE
 
         }
 
-        public AdministratorManagmentDisplay()
+        public frmSupervisorManagmentDisplay()
         {
             InitializeComponent();
         }
 
         private void btnModems_Click(object sender, EventArgs e)
         {
-            ModemInspection mI = new ModemInspection(UserName, UserId);
+            frmModemInspection mI = new frmModemInspection(UserName, UserId);
             mI.Show();
             this.Hide();
         }
 
         private void btnManageSAPs_Click(object sender, EventArgs e)
         {
-            SapsManagement mI = new SapsManagement(UserName, UserId);
+            frmSapsManagement mI = new frmSapsManagement(UserName, UserId);
             mI.Show();
             this.Hide();
         }
 
         private void btnManageUsers_Click(object sender, EventArgs e)
         {
-            UsersManagement mI = new UsersManagement(UserName, UserId);
+            frmUsersManagement mI = new frmUsersManagement(UserName, UserId);
             mI.Show();
             this.Hide();
         }

@@ -1,6 +1,6 @@
 ﻿namespace OTE
 {
-    partial class SatInspection
+    partial class frmSatInspection
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SatInspection));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSatInspection));
             this.rbtUpdate = new System.Windows.Forms.RadioButton();
             this.chbPackBox = new System.Windows.Forms.CheckBox();
             this.chbExtPowerSupply = new System.Windows.Forms.CheckBox();

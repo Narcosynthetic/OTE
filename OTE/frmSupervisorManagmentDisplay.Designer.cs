@@ -1,6 +1,6 @@
 ﻿namespace OTE
 {
-    partial class AdministratorManagmentDisplay
+    partial class frmSupervisorManagmentDisplay
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministratorManagmentDisplay));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSupervisorManagmentDisplay));
             this.label1 = new System.Windows.Forms.Label();
             this.btnModems = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -152,7 +152,7 @@
             this.btnManageUsers.UseVisualStyleBackColor = true;
             this.btnManageUsers.Click += new System.EventHandler(this.btnManageUsers_Click);
             // 
-            // AdministratorManagmentDisplay
+            // frmSupervisorManagmentDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -169,8 +169,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AdministratorManagmentDisplay";
-            this.Text = "Administrator";
+            this.Name = "frmSupervisorManagmentDisplay";
+            this.Text = "Supervisor";
             this.ResumeLayout(false);
             this.PerformLayout();
 

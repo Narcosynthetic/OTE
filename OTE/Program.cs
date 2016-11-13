@@ -16,7 +16,7 @@ namespace OTE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogIn());
+            Application.Run(new frmLogIn());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace OTE
 {
-    partial class SapsManagement
+    partial class frmSapsManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SapsManagement));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSapsManagement));
             this.lblUserName = new System.Windows.Forms.Label();
             this.dgvSaps = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typosMhxanhmatosIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.sAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sAPDataSet = new OTE.SAPDataSet();
             this.sAPTableAdapter = new OTE.SAPDataSetTableAdapters.SAPTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typosMhxanhmatosIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPDataSet)).BeginInit();
@@ -67,6 +67,20 @@
             this.dgvSaps.Size = new System.Drawing.Size(520, 102);
             this.dgvSaps.TabIndex = 1;
             // 
+            // sAPBindingSource
+            // 
+            this.sAPBindingSource.DataMember = "SAP";
+            this.sAPBindingSource.DataSource = this.sAPDataSet;
+            // 
+            // sAPDataSet
+            // 
+            this.sAPDataSet.DataSetName = "SAPDataSet";
+            this.sAPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sAPTableAdapter
+            // 
+            this.sAPTableAdapter.ClearBeforeFill = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -75,6 +89,7 @@
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             this.idDataGridViewTextBoxColumn.Visible = false;
+            this.idDataGridViewTextBoxColumn.Width = 41;
             // 
             // sapDataGridViewTextBoxColumn
             // 
@@ -90,24 +105,9 @@
             this.typosMhxanhmatosIdDataGridViewTextBoxColumn.HeaderText = "Typos Mhxanhmatos";
             this.typosMhxanhmatosIdDataGridViewTextBoxColumn.Name = "typosMhxanhmatosIdDataGridViewTextBoxColumn";
             this.typosMhxanhmatosIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.typosMhxanhmatosIdDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.typosMhxanhmatosIdDataGridViewTextBoxColumn.Width = 119;
             // 
-            // sAPBindingSource
-            // 
-            this.sAPBindingSource.DataMember = "SAP";
-            this.sAPBindingSource.DataSource = this.sAPDataSet;
-            // 
-            // sAPDataSet
-            // 
-            this.sAPDataSet.DataSetName = "SAPDataSet";
-            this.sAPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sAPTableAdapter
-            // 
-            this.sAPTableAdapter.ClearBeforeFill = true;
-            // 
-            // SapsManagement
+            // frmSapsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -115,7 +115,7 @@
             this.Controls.Add(this.dgvSaps);
             this.Controls.Add(this.lblUserName);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "SapsManagement";
+            this.Name = "frmSapsManagement";
             this.Text = "SAP\'s Management";
             this.Load += new System.EventHandler(this.SapsManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaps)).EndInit();
@@ -135,6 +135,6 @@
         private SAPDataSetTableAdapters.SAPTableAdapter sAPTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sapDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn typosMhxanhmatosIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typosMhxanhmatosIdDataGridViewTextBoxColumn;
     }
 }

@@ -287,7 +287,9 @@ namespace OTE {
             
             private global::System.Data.DataColumn columnSerialNumber;
             
-            private global::System.Data.DataColumn columnOkOffUpdate;
+            private global::System.Data.DataColumn columnStatusId;
+            
+            private global::System.Data.DataColumn columnStatus;
             
             private global::System.Data.DataColumn columnParatiriseis;
             
@@ -358,9 +360,17 @@ namespace OTE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn OkOffUpdateColumn {
+            public global::System.Data.DataColumn StatusIdColumn {
                 get {
-                    return this.columnOkOffUpdate;
+                    return this.columnStatusId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn StatusColumn {
+                get {
+                    return this.columnStatus;
                 }
             }
             
@@ -409,14 +419,15 @@ namespace OTE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GetModemsRow AddGetModemsRow(int SapId, int Sap, string SerialNumber, int OkOffUpdate, string Paratiriseis) {
+            public GetModemsRow AddGetModemsRow(int SapId, int Sap, string SerialNumber, int StatusId, string Status, string Paratiriseis) {
                 GetModemsRow rowGetModemsRow = ((GetModemsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         SapId,
                         Sap,
                         SerialNumber,
-                        OkOffUpdate,
+                        StatusId,
+                        Status,
                         Paratiriseis};
                 rowGetModemsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGetModemsRow);
@@ -451,7 +462,8 @@ namespace OTE {
                 this.columnSapId = base.Columns["SapId"];
                 this.columnSap = base.Columns["Sap"];
                 this.columnSerialNumber = base.Columns["SerialNumber"];
-                this.columnOkOffUpdate = base.Columns["OkOffUpdate"];
+                this.columnStatusId = base.Columns["StatusId"];
+                this.columnStatus = base.Columns["Status"];
                 this.columnParatiriseis = base.Columns["Paratiriseis"];
             }
             
@@ -466,8 +478,10 @@ namespace OTE {
                 base.Columns.Add(this.columnSap);
                 this.columnSerialNumber = new global::System.Data.DataColumn("SerialNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSerialNumber);
-                this.columnOkOffUpdate = new global::System.Data.DataColumn("OkOffUpdate", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOkOffUpdate);
+                this.columnStatusId = new global::System.Data.DataColumn("StatusId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatusId);
+                this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStatus);
                 this.columnParatiriseis = new global::System.Data.DataColumn("Paratiriseis", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnParatiriseis);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -479,7 +493,8 @@ namespace OTE {
                 this.columnSapId.AllowDBNull = false;
                 this.columnSerialNumber.AllowDBNull = false;
                 this.columnSerialNumber.MaxLength = 50;
-                this.columnOkOffUpdate.AllowDBNull = false;
+                this.columnStatusId.AllowDBNull = false;
+                this.columnStatus.MaxLength = 10;
                 this.columnParatiriseis.MaxLength = 2147483647;
             }
             
@@ -672,12 +687,28 @@ namespace OTE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int OkOffUpdate {
+            public int StatusId {
                 get {
-                    return ((int)(this[this.tableGetModems.OkOffUpdateColumn]));
+                    return ((int)(this[this.tableGetModems.StatusIdColumn]));
                 }
                 set {
-                    this[this.tableGetModems.OkOffUpdateColumn] = value;
+                    this[this.tableGetModems.StatusIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Status {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetModems.StatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Status\' in table \'GetModems\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetModems.StatusColumn] = value;
                 }
             }
             
@@ -707,6 +738,18 @@ namespace OTE {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetSapNull() {
                 this[this.tableGetModems.SapColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsStatusNull() {
+                return this.IsNull(this.tableGetModems.StatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetStatusNull() {
+                this[this.tableGetModems.StatusColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -885,7 +928,8 @@ namespace OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("SapId", "SapId");
             tableMapping.ColumnMappings.Add("Sap", "Sap");
             tableMapping.ColumnMappings.Add("SerialNumber", "SerialNumber");
-            tableMapping.ColumnMappings.Add("OkOffUpdate", "OkOffUpdate");
+            tableMapping.ColumnMappings.Add("StatusId", "StatusId");
+            tableMapping.ColumnMappings.Add("Status", "Status");
             tableMapping.ColumnMappings.Add("Paratiriseis", "Paratiriseis");
             this._adapter.TableMappings.Add(tableMapping);
         }

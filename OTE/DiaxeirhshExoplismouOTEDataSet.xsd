@@ -29,7 +29,8 @@
               <Mapping SourceColumn="SapId" DataSetColumn="SapId" />
               <Mapping SourceColumn="Sap" DataSetColumn="Sap" />
               <Mapping SourceColumn="SerialNumber" DataSetColumn="SerialNumber" />
-              <Mapping SourceColumn="OkOffUpdate" DataSetColumn="OkOffUpdate" />
+              <Mapping SourceColumn="StatusId" DataSetColumn="StatusId" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
               <Mapping SourceColumn="Paratiriseis" DataSetColumn="Paratiriseis" />
             </Mappings>
             <Sources />
@@ -55,7 +56,14 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="OkOffUpdate" msprop:Generator_ColumnVarNameInTable="columnOkOffUpdate" msprop:Generator_ColumnPropNameInRow="OkOffUpdate" msprop:Generator_ColumnPropNameInTable="OkOffUpdateColumn" msprop:Generator_UserColumnName="OkOffUpdate" type="xs:int" />
+              <xs:element name="StatusId" msprop:Generator_ColumnVarNameInTable="columnStatusId" msprop:Generator_ColumnPropNameInRow="StatusId" msprop:Generator_ColumnPropNameInTable="StatusIdColumn" msprop:Generator_UserColumnName="StatusId" type="xs:int" />
+              <xs:element name="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" msprop:Generator_UserColumnName="Status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Paratiriseis" msprop:Generator_ColumnVarNameInTable="columnParatiriseis" msprop:Generator_ColumnPropNameInRow="Paratiriseis" msprop:Generator_ColumnPropNameInTable="ParatiriseisColumn" msprop:Generator_UserColumnName="Paratiriseis" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

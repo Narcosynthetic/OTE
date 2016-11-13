@@ -1,6 +1,6 @@
 ﻿namespace OTE
 {
-    partial class UsersManagement
+    partial class frmUsersManagement
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsersManagement));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsersManagement));
             this.lblUserName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 

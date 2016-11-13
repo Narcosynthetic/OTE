@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace OTE
 {
-    public partial class SatInspection : Form
+    public partial class frmSatInspection : Form
     {
-        public SatInspection()
+        public frmSatInspection()
         {
             InitializeComponent();
         }

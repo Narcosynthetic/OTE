@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace OTE
 {
-    public partial class SapsManagement : Form
+    public partial class frmSapsManagement : Form
     {
         #region Properties
         private int UserId
@@ -27,12 +27,12 @@ namespace OTE
 
         #endregion
 
-        public SapsManagement()
+        public frmSapsManagement()
         {
             InitializeComponent();
         }
 
-        public SapsManagement(string userName, int userId)
+        public frmSapsManagement(string userName, int userId)
         {
             InitializeComponent();
 

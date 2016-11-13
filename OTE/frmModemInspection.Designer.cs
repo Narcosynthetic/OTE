@@ -1,6 +1,6 @@
 ﻿namespace OTE
 {
-    partial class ModemInspection
+    partial class frmModemInspection
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModemInspection));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModemInspection));
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.txtSn = new System.Windows.Forms.TextBox();
@@ -64,14 +64,12 @@
             this.lblErrOkOffUpdate = new System.Windows.Forms.Label();
             this.dgvModemsPersonal = new System.Windows.Forms.DataGridView();
             this.getModemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.diaxeirhshExoplismouOTEDataSet1 = new OTE.DiaxeirhshExoplismouOTEDataSet1();
+            this.DiaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
             this.label6 = new System.Windows.Forms.Label();
             this.sAPDataSet = new OTE.SAPDataSet();
             this.sAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sAPTableAdapter = new OTE.SAPDataSetTableAdapters.SAPTableAdapter();
-            this.diaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
-            this.getModemsTableAdapter = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter();
-            this.getModemsTableAdapter1 = new OTE.DiaxeirhshExoplismouOTEDataSet1TableAdapters.GetModemsTableAdapter();
+            this.getModemsTableAdapter1 = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.lblModemId = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,10 +81,9 @@
             this.Paratiriseis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModemsPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getModemsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DiaxeirhshExoplismouOTEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInsert
@@ -430,12 +427,12 @@
             // getModemsBindingSource
             // 
             this.getModemsBindingSource.DataMember = "GetModems";
-            this.getModemsBindingSource.DataSource = this.diaxeirhshExoplismouOTEDataSet1;
+            this.getModemsBindingSource.DataSource = this.DiaxeirhshExoplismouOTEDataSet;
             // 
-            // diaxeirhshExoplismouOTEDataSet1
+            // DiaxeirhshExoplismouOTEDataSet
             // 
-            this.diaxeirhshExoplismouOTEDataSet1.DataSetName = "DiaxeirhshExoplismouOTEDataSet1";
-            this.diaxeirhshExoplismouOTEDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.DiaxeirhshExoplismouOTEDataSet.DataSetName = "DiaxeirhshExoplismouOTEDataSet";
+            this.DiaxeirhshExoplismouOTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label6
             // 
@@ -459,15 +456,6 @@
             // sAPTableAdapter
             // 
             this.sAPTableAdapter.ClearBeforeFill = true;
-            // 
-            // diaxeirhshExoplismouOTEDataSet
-            // 
-            this.diaxeirhshExoplismouOTEDataSet.DataSetName = "DiaxeirhshExoplismouOTEDataSet";
-            this.diaxeirhshExoplismouOTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getModemsTableAdapter
-            // 
-            this.getModemsTableAdapter.ClearBeforeFill = true;
             // 
             // getModemsTableAdapter1
             // 
@@ -593,10 +581,9 @@
             this.Load += new System.EventHandler(this.ModemInspection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvModemsPersonal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getModemsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DiaxeirhshExoplismouOTEDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -641,11 +628,9 @@
         private SAPDataSet sAPDataSet;
         private System.Windows.Forms.BindingSource sAPBindingSource;
         private SAPDataSetTableAdapters.SAPTableAdapter sAPTableAdapter;
-        private DiaxeirhshExoplismouOTEDataSet diaxeirhshExoplismouOTEDataSet;
-        private DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter getModemsTableAdapter;
         private System.Windows.Forms.BindingSource getModemsBindingSource;
-        private DiaxeirhshExoplismouOTEDataSet1 diaxeirhshExoplismouOTEDataSet1;
-        private DiaxeirhshExoplismouOTEDataSet1TableAdapters.GetModemsTableAdapter getModemsTableAdapter1;
+        private DiaxeirhshExoplismouOTEDataSet DiaxeirhshExoplismouOTEDataSet;
+        private DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter getModemsTableAdapter1;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label lblModemId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;

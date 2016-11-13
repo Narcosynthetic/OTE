@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace OTE
 {
-    public partial class ModemInspection : Form
+    public partial class frmModemInspection : Form
     {
         #region Properties
         private int UserId
@@ -27,7 +27,7 @@ namespace OTE
             set;
         }
 
-        private Helpers.SavingMode Mode
+        private Enums.SavingMode Mode
         {
             get;
             set;
@@ -42,12 +42,12 @@ namespace OTE
         #endregion
 
         #region Constructors
-        public ModemInspection()
+        public frmModemInspection()
         {
             InitializeComponent();
         }
 
-        public ModemInspection(string userName, int userId)
+        public frmModemInspection(string userName, int userId)
         {
             InitializeComponent();
 
@@ -66,20 +66,20 @@ namespace OTE
             this.sAPTableAdapter.Fill(this.sAPDataSet.SAP);
             LoadSaps();
             LoadDailyModems();
-            this.Mode = Helpers.SavingMode.Insert;
+            this.Mode = Enums.SavingMode.Insert;
             DecideOnMode();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (ValidateInput())
-                if (this.Mode == Helpers.SavingMode.Insert)
+                if (this.Mode == Enums.SavingMode.Insert)
                     InsertTechModem();
                 else
                     UpdateTechModem();
 
 
-            this.Mode = Helpers.SavingMode.Insert;
+            this.Mode = Enums.SavingMode.Insert;
             DecideOnMode();
         }
 
@@ -95,7 +95,7 @@ namespace OTE
                 var id = dgvModemsPersonal.Rows[e.RowIndex].Cells["Id"].Value.ToString();
                 this.ModemId = id;
                 LoadModem(this.ModemId);
-                this.Mode = Helpers.SavingMode.Update;
+                this.Mode = Enums.SavingMode.Update;
                 DecideOnMode();
             }
         }
@@ -287,7 +287,7 @@ namespace OTE
                 rtbNotes.Text = string.Empty;
                 lblErrSn.Visible = false;
                 lblErrOkOffUpdate.Visible = false;
-                Mode = Helpers.SavingMode.Insert;
+                Mode = Enums.SavingMode.Insert;
                 DecideOnMode();
             }
             catch (Exception ex)
@@ -428,12 +428,12 @@ namespace OTE
 
         private void DecideOnMode()
         {
-            if (this.Mode == Helpers.SavingMode.Insert)
+            if (this.Mode == Enums.SavingMode.Insert)
             {
                 btnInsert.Enabled = true;
                 btnUpdate.Enabled = false;
             }
-            else if (this.Mode == Helpers.SavingMode.Update)
+            else if (this.Mode == Enums.SavingMode.Update)
             {
                 btnInsert.Enabled = false;
                 btnUpdate.Enabled = true;

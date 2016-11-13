@@ -10,20 +10,13 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
-
-
 namespace OTE
 {
-    public partial class LogIn : Form
+    public partial class frmLogIn : Form
     {
-        public LogIn()
+        public frmLogIn()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -35,11 +28,31 @@ namespace OTE
         {
             try
             {
-                //var username = txtUserName.Text;
-                //var password = txtPassword.Text;
+                //var username = txtUserName.Text.Trim();
+                //var password = txtPassword.Text.Trim();
+
                 var username = "papas";
                 var password = "papas";
 
+                bool isValid = true;
+                if (String.IsNullOrEmpty(username))
+                {
+                    lblMandatoryUserName.Visible = true;
+                    isValid = false;
+                }
+                else
+                    lblMandatoryUserName.Visible = false;
+
+                if (String.IsNullOrEmpty(password))
+                {
+                    lblMandatoryPassword.Visible = true;
+                    isValid = false;
+                }
+                else
+                    lblMandatoryPassword.Visible = false;
+
+                if (!isValid)
+                    return;
 
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Main"].ConnectionString))
                 {
@@ -59,24 +72,24 @@ namespace OTE
                             {
                                 var _userName = dTable.Rows[0]["UserName"].ToString();
                                 var _userId = int.Parse(dTable.Rows[0]["UserID"].ToString());
+                                var _roles = dTable.Rows[0]["Roles"].ToString();
 
-                                if (dTable.Rows[0]["AccessLevel"].ToString() == "1")
+                                if (String.IsNullOrEmpty(_roles))
                                 {
-                                    AdministratorManagmentDisplay amd = new AdministratorManagmentDisplay(_userName, _userId);
-                                    amd.Show();
-                                }
-                                else if (dTable.Rows[0][0].ToString() == "2")
-                                {
-                                    AdministratorManagmentDisplay amd = new AdministratorManagmentDisplay(_userName, _userId);
-                                    amd.Show();
-                                }
-                                else if (dTable.Rows[0][0].ToString() == "3")
-                                {
-                                    AdministratorManagmentDisplay amd = new AdministratorManagmentDisplay(_userName, _userId);
-                                    amd.Show();
+                                    lblNoAccess.Text = "This user has no roles. Please contact your administrator.";
+                                    lblNoAccess.Visible = true;
+                                    return;
                                 }
 
+                                string[] roles = _roles.Split(new char[] { ',' });
+                                frmMain frmMain = new frmMain(_userId, _userName, roles);
+                                frmMain.Show();
                                 this.Hide();
+                            }
+                            else
+                            {
+                                lblNoAccess.Text = "No user was found with these credentials. Please contact your administrator.";
+                                lblNoAccess.Visible = true;
                             }
 
                         }
