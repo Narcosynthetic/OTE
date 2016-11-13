@@ -48,6 +48,21 @@ namespace OTE
             }
         }
 
+        private void btnAddNew_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDectivate_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Methods
