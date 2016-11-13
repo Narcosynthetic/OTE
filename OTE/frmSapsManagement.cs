@@ -36,8 +36,7 @@ namespace OTE
 
         private void SapsManagement_Load(object sender, EventArgs e)
         {
-            GetSapsTechFromDb();
-
+            PopulateGrid();
         }
 
         #region Methods
@@ -46,7 +45,7 @@ namespace OTE
         {
             try
             {
-                sAPBindingSource.DataSource = GetSapsTechFromDb();
+                getSapsDetailsBindingSource.DataSource = GetSapsTechFromDb();
             }
             catch (Exception ex)
             {
@@ -62,7 +61,7 @@ namespace OTE
             {
                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Main"].ConnectionString))
                 {
-                    using (SqlCommand cmd = new SqlCommand("[dbo].[GetSapsTechDiscr]", conn))
+                    using (SqlCommand cmd = new SqlCommand("[dbo].[GetSapsDetails]", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
