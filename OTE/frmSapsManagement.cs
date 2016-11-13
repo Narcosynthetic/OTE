@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,20 +34,9 @@ namespace OTE
             InitializeComponent();
         }
 
-        public frmSapsManagement(string userName, int userId)
-        {
-            InitializeComponent();
-
-            UserName = userName;
-            UserId = userId;
-            lblUserName.Text = "Welcome " + UserName;
-
-        }
-
         private void SapsManagement_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sAPDataSet.SAP' table. You can move, or remove it, as needed.
-            this.sAPTableAdapter.Fill(this.sAPDataSet.SAP);
+            GetSapsTechFromDb();
 
         }
 
@@ -55,14 +46,7 @@ namespace OTE
         {
             try
             {
-                //for (int i = 0; i < g.Rows.Count; ++i)
-                //{
-                //    DataGridViewComboBoxCell cell = dgvSaps.Rows[i].Cells[2] as DataGridViewComboBoxCell;
-                //        cell.Items.Clear();
-                //        cell.Items.Add("one");
-                //        cell.Items.Add("two");
-                //        cell.Items.Add("three");
-                //}
+                sAPBindingSource.DataSource = GetSapsTechFromDb();
             }
             catch (Exception ex)
             {
@@ -70,7 +54,36 @@ namespace OTE
                 throw;
             }
         }
+
+        private DataTable GetSapsTechFromDb()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Main"].ConnectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand("[dbo].[GetSapsTechDiscr]", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            da.Fill(dt);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                string error = ex.Message; //sto message property einai apothhkeymenh h timh toy error
+                throw;
+            }
+            return dt;
+        }
+
         #endregion
 
     }
+
 }

@@ -30,42 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSapsManagement));
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.dgvSaps = new System.Windows.Forms.DataGridView();
             this.sAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sAPDataSet = new OTE.SAPDataSet();
             this.sAPTableAdapter = new OTE.SAPDataSetTableAdapters.SAPTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typosMhxanhmatosIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSaps)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(556, 23);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(35, 13);
-            this.lblUserName.TabIndex = 0;
-            this.lblUserName.Text = "label1";
-            // 
-            // dgvSaps
-            // 
-            this.dgvSaps.AllowUserToOrderColumns = true;
-            this.dgvSaps.AutoGenerateColumns = false;
-            this.dgvSaps.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSaps.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.sapDataGridViewTextBoxColumn,
-            this.typosMhxanhmatosIdDataGridViewTextBoxColumn});
-            this.dgvSaps.DataSource = this.sAPBindingSource;
-            this.dgvSaps.Location = new System.Drawing.Point(12, 59);
-            this.dgvSaps.Name = "dgvSaps";
-            this.dgvSaps.Size = new System.Drawing.Size(520, 102);
-            this.dgvSaps.TabIndex = 1;
             // 
             // sAPBindingSource
             // 
@@ -81,58 +56,67 @@
             // 
             this.sAPTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.sapDataGridViewTextBoxColumn,
+            this.typosMhxanhmatosIdDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.sAPBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(112, 28);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(466, 227);
+            this.dataGridView1.TabIndex = 0;
+            // 
             // idDataGridViewTextBoxColumn
             // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            this.idDataGridViewTextBoxColumn.Width = 41;
             // 
             // sapDataGridViewTextBoxColumn
             // 
             this.sapDataGridViewTextBoxColumn.DataPropertyName = "Sap";
-            this.sapDataGridViewTextBoxColumn.HeaderText = "SAP";
+            this.sapDataGridViewTextBoxColumn.HeaderText = "Sap";
             this.sapDataGridViewTextBoxColumn.Name = "sapDataGridViewTextBoxColumn";
-            this.sapDataGridViewTextBoxColumn.Width = 200;
+            this.sapDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // typosMhxanhmatosIdDataGridViewTextBoxColumn
             // 
-            this.typosMhxanhmatosIdDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.typosMhxanhmatosIdDataGridViewTextBoxColumn.DataPropertyName = "TyposMhxanhmatosId";
-            this.typosMhxanhmatosIdDataGridViewTextBoxColumn.HeaderText = "Typos Mhxanhmatos";
+            this.typosMhxanhmatosIdDataGridViewTextBoxColumn.HeaderText = "TyposMhxanhmatosId";
             this.typosMhxanhmatosIdDataGridViewTextBoxColumn.Name = "typosMhxanhmatosIdDataGridViewTextBoxColumn";
-            this.typosMhxanhmatosIdDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.typosMhxanhmatosIdDataGridViewTextBoxColumn.Width = 119;
+            this.typosMhxanhmatosIdDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // frmSapsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 420);
-            this.Controls.Add(this.dgvSaps);
-            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSapsManagement";
             this.Text = "SAP\'s Management";
             this.Load += new System.EventHandler(this.SapsManagement_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSaps)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.DataGridView dgvSaps;
         private SAPDataSet sAPDataSet;
         private System.Windows.Forms.BindingSource sAPBindingSource;
         private SAPDataSetTableAdapters.SAPTableAdapter sAPTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sapDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typosMhxanhmatosIdDataGridViewTextBoxColumn;

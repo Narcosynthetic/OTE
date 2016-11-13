@@ -48,7 +48,7 @@ namespace OTE
 
         private void btnManageSAPs_Click(object sender, EventArgs e)
         {
-            frmSapsManagement mI = new frmSapsManagement(UserName, UserId);
+            frmSapsManagement mI = new frmSapsManagement();
             mI.Show();
             this.Hide();
         }
