@@ -37,7 +37,6 @@ namespace OTE
 
             UserName = userName;
             UserId = userId;
-            lblUserName.Text = "Welcome " + UserName;
         }
 
     }
