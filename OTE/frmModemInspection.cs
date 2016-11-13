@@ -15,17 +15,17 @@ namespace OTE
     public partial class frmModemInspection : Form
     {
         #region Properties
-        private int UserId
-        {
-            get;
-            set;
-        }
+        //private int UserId
+        //{
+        //    get;
+        //    set;
+        //}
 
-        private string UserName
-        {
-            get;
-            set;
-        }
+        //private string UserName
+        //{
+        //    get;
+        //    set;
+        //}
 
         private Enums.SavingMode Mode
         {
@@ -46,17 +46,7 @@ namespace OTE
         {
             InitializeComponent();
         }
-
-        public frmModemInspection(string userName, int userId)
-        {
-            InitializeComponent();
-
-            UserName = userName;
-            UserId = userId;
-            lblUserName.Text = "Welcome " + UserName;
-
-        }
-
+        
         #endregion
 
         #region Events
@@ -65,7 +55,7 @@ namespace OTE
             LoadSaps();
             LoadDailyModems();
             this.Mode = Enums.SavingMode.Insert;
-            DecideOnMode();
+            HandleFormControls();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -78,7 +68,7 @@ namespace OTE
 
 
             this.Mode = Enums.SavingMode.Insert;
-            DecideOnMode();
+            HandleFormControls();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -94,7 +84,7 @@ namespace OTE
                 this.ModemId = id;
                 LoadModem(this.ModemId);
                 this.Mode = Enums.SavingMode.Update;
-                DecideOnMode();
+                HandleFormControls();
             }
         }
 
@@ -151,7 +141,7 @@ namespace OTE
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@SerialNumber", txtSn.Text.Trim());
                         cmd.Parameters.AddWithValue("@Sap", int.Parse(cbxSap.SelectedValue.ToString()));
-                        cmd.Parameters.AddWithValue("@UserId", UserId);
+                        cmd.Parameters.AddWithValue("@UserId", ((frmMain)this.MdiParent).UserId);
                         cmd.Parameters.AddWithValue("@HmeromhniaElenxou", DateTime.Now);
                         cmd.Parameters.AddWithValue("@Power", chbPower.Checked);
                         cmd.Parameters.AddWithValue("@Dsl", chbDsl.Checked);
@@ -211,7 +201,7 @@ namespace OTE
                         cmd.Parameters.AddWithValue("@id", ModemId);
                         cmd.Parameters.AddWithValue("@SerialNumber", txtSn.Text.Trim());
                         cmd.Parameters.AddWithValue("@Sap", int.Parse(cbxSap.SelectedValue.ToString()));
-                        cmd.Parameters.AddWithValue("@UserId", UserId);
+                        cmd.Parameters.AddWithValue("@UserId", ((frmMain)this.MdiParent).UserId);
                         cmd.Parameters.AddWithValue("@HmeromhniaElenxou", DateTime.Now);
                         cmd.Parameters.AddWithValue("@Power", chbPower.Checked);
                         cmd.Parameters.AddWithValue("@Dsl", chbDsl.Checked);
@@ -286,7 +276,7 @@ namespace OTE
                 lblErrSn.Visible = false;
                 lblErrOkOffUpdate.Visible = false;
                 Mode = Enums.SavingMode.Insert;
-                DecideOnMode();
+                HandleFormControls();
             }
             catch (Exception ex)
             {
@@ -350,7 +340,7 @@ namespace OTE
                     using (SqlCommand cmd = new SqlCommand("[dbo].[GetModems]", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@userId", UserId);
+                        cmd.Parameters.AddWithValue("@userId", ((frmMain)this.MdiParent).UserId);
                         cmd.Parameters.AddWithValue("@hmeromhniaElenxouApo", DateTime.Today);
                         cmd.Parameters.AddWithValue("@hmeromhniaElenxouEos", DateTime.Today);
                         cmd.Parameters.AddWithValue("@ordering", "HmeromhniaElenxou desc");
@@ -424,7 +414,7 @@ namespace OTE
             return modemDT;
         }
 
-        private void DecideOnMode()
+        private void HandleFormControls()
         {
             if (this.Mode == Enums.SavingMode.Insert)
             {

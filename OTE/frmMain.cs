@@ -13,19 +13,19 @@ namespace OTE
     public partial class frmMain : Form
     {
         #region Properties
-        private int UserId
+        public int UserId
         {
             get;
             set;
         }
 
-        private string UserName
+        public string UserName
         {
             get;
             set;
         }
 
-        private string[] Roles
+        public string[] Roles
         {
             get;
             set;

@@ -41,7 +41,7 @@ namespace OTE
 
         private void btnModems_Click(object sender, EventArgs e)
         {
-            frmModemInspection mI = new frmModemInspection(UserName, UserId);
+            frmModemInspection mI = new frmModemInspection();
             mI.Show();
             this.Hide();
         }

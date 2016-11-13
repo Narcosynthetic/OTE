@@ -59,17 +59,9 @@
             this.chbFirmware = new System.Windows.Forms.CheckBox();
             this.chbPackBox = new System.Windows.Forms.CheckBox();
             this.rbtUpdate = new System.Windows.Forms.RadioButton();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.lblErrSn = new System.Windows.Forms.Label();
             this.lblErrOkOffUpdate = new System.Windows.Forms.Label();
             this.dgvModemsPersonal = new System.Windows.Forms.DataGridView();
-            this.getModemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DiaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
-            this.label6 = new System.Windows.Forms.Label();
-            this.sAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getModemsTableAdapter1 = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.lblModemId = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SapId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sap = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +69,20 @@
             this.OkOffUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paratiriseis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getModemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DiaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
+            this.label6 = new System.Windows.Forms.Label();
+            this.sAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getModemsTableAdapter1 = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.lblModemId = new System.Windows.Forms.Label();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sapIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serialNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paratiriseisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModemsPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getModemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiaxeirhshExoplismouOTEDataSet)).BeginInit();
@@ -364,16 +370,6 @@
             this.rbtUpdate.Text = "Update";
             this.rbtUpdate.UseVisualStyleBackColor = true;
             // 
-            // lblUserName
-            // 
-            this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(956, 31);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(67, 13);
-            this.lblUserName.TabIndex = 25;
-            this.lblUserName.Text = "lblUserName";
-            // 
             // lblErrSn
             // 
             this.lblErrSn.AutoSize = true;
@@ -409,7 +405,14 @@
             this.SerialNumber,
             this.OkOffUpdate,
             this.Status,
-            this.Paratiriseis});
+            this.Paratiriseis,
+            this.idDataGridViewTextBoxColumn,
+            this.sapIdDataGridViewTextBoxColumn,
+            this.sapDataGridViewTextBoxColumn,
+            this.serialNumberDataGridViewTextBoxColumn,
+            this.statusIdDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.paratiriseisDataGridViewTextBoxColumn});
             this.dgvModemsPersonal.DataSource = this.getModemsBindingSource;
             this.dgvModemsPersonal.Location = new System.Drawing.Point(481, 96);
             this.dgvModemsPersonal.MultiSelect = false;
@@ -420,49 +423,6 @@
             this.dgvModemsPersonal.TabIndex = 28;
             this.dgvModemsPersonal.TabStop = false;
             this.dgvModemsPersonal.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvModemsPersonal_CellMouseDoubleClick);
-            // 
-            // getModemsBindingSource
-            // 
-            this.getModemsBindingSource.DataMember = "GetModems";
-            this.getModemsBindingSource.DataSource = this.DiaxeirhshExoplismouOTEDataSet;
-            // 
-            // DiaxeirhshExoplismouOTEDataSet
-            // 
-            this.DiaxeirhshExoplismouOTEDataSet.DataSetName = "DiaxeirhshExoplismouOTEDataSet";
-            this.DiaxeirhshExoplismouOTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 389);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Status";
-            // 
-            // getModemsTableAdapter1
-            // 
-            this.getModemsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(137, 550);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 30;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // lblModemId
-            // 
-            this.lblModemId.AutoSize = true;
-            this.lblModemId.Location = new System.Drawing.Point(294, 38);
-            this.lblModemId.Name = "lblModemId";
-            this.lblModemId.Size = new System.Drawing.Size(61, 13);
-            this.lblModemId.TabIndex = 31;
-            this.lblModemId.Text = "lblModemId";
-            this.lblModemId.Visible = false;
             // 
             // Id
             // 
@@ -517,7 +477,99 @@
             this.Paratiriseis.ReadOnly = true;
             this.Paratiriseis.Width = 200;
             // 
-            // ModemInspection
+            // getModemsBindingSource
+            // 
+            this.getModemsBindingSource.DataMember = "GetModems";
+            this.getModemsBindingSource.DataSource = this.DiaxeirhshExoplismouOTEDataSet;
+            // 
+            // DiaxeirhshExoplismouOTEDataSet
+            // 
+            this.DiaxeirhshExoplismouOTEDataSet.DataSetName = "DiaxeirhshExoplismouOTEDataSet";
+            this.DiaxeirhshExoplismouOTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 389);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Status";
+            // 
+            // getModemsTableAdapter1
+            // 
+            this.getModemsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(137, 550);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 30;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // lblModemId
+            // 
+            this.lblModemId.AutoSize = true;
+            this.lblModemId.Location = new System.Drawing.Point(294, 38);
+            this.lblModemId.Name = "lblModemId";
+            this.lblModemId.Size = new System.Drawing.Size(61, 13);
+            this.lblModemId.TabIndex = 31;
+            this.lblModemId.Text = "lblModemId";
+            this.lblModemId.Visible = false;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sapIdDataGridViewTextBoxColumn
+            // 
+            this.sapIdDataGridViewTextBoxColumn.DataPropertyName = "SapId";
+            this.sapIdDataGridViewTextBoxColumn.HeaderText = "SapId";
+            this.sapIdDataGridViewTextBoxColumn.Name = "sapIdDataGridViewTextBoxColumn";
+            this.sapIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sapDataGridViewTextBoxColumn
+            // 
+            this.sapDataGridViewTextBoxColumn.DataPropertyName = "Sap";
+            this.sapDataGridViewTextBoxColumn.HeaderText = "Sap";
+            this.sapDataGridViewTextBoxColumn.Name = "sapDataGridViewTextBoxColumn";
+            this.sapDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // serialNumberDataGridViewTextBoxColumn
+            // 
+            this.serialNumberDataGridViewTextBoxColumn.DataPropertyName = "SerialNumber";
+            this.serialNumberDataGridViewTextBoxColumn.HeaderText = "SerialNumber";
+            this.serialNumberDataGridViewTextBoxColumn.Name = "serialNumberDataGridViewTextBoxColumn";
+            this.serialNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusIdDataGridViewTextBoxColumn
+            // 
+            this.statusIdDataGridViewTextBoxColumn.DataPropertyName = "StatusId";
+            this.statusIdDataGridViewTextBoxColumn.HeaderText = "StatusId";
+            this.statusIdDataGridViewTextBoxColumn.Name = "statusIdDataGridViewTextBoxColumn";
+            this.statusIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paratiriseisDataGridViewTextBoxColumn
+            // 
+            this.paratiriseisDataGridViewTextBoxColumn.DataPropertyName = "Paratiriseis";
+            this.paratiriseisDataGridViewTextBoxColumn.HeaderText = "Paratiriseis";
+            this.paratiriseisDataGridViewTextBoxColumn.Name = "paratiriseisDataGridViewTextBoxColumn";
+            this.paratiriseisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // frmModemInspection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -528,7 +580,6 @@
             this.Controls.Add(this.dgvModemsPersonal);
             this.Controls.Add(this.lblErrOkOffUpdate);
             this.Controls.Add(this.lblErrSn);
-            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.rbtUpdate);
             this.Controls.Add(this.chbPackBox);
             this.Controls.Add(this.chbFirmware);
@@ -559,7 +610,7 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnInsert);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ModemInspection";
+            this.Name = "frmModemInspection";
             this.Text = "Modem Inspection";
             this.Load += new System.EventHandler(this.ModemInspection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvModemsPersonal)).EndInit();
@@ -602,7 +653,6 @@
         private System.Windows.Forms.CheckBox chbFirmware;
         private System.Windows.Forms.CheckBox chbPackBox;
         private System.Windows.Forms.RadioButton rbtUpdate;
-        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblErrSn;
         private System.Windows.Forms.Label lblErrOkOffUpdate;
         private System.Windows.Forms.DataGridView dgvModemsPersonal;
@@ -620,5 +670,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn OkOffUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.DataGridViewTextBoxColumn Paratiriseis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sapIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sapDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serialNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paratiriseisDataGridViewTextBoxColumn;
     }
 }
