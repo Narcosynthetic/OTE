@@ -66,9 +66,7 @@
             this.getModemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DiaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
             this.label6 = new System.Windows.Forms.Label();
-            this.sAPDataSet = new OTE.SAPDataSet();
             this.sAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sAPTableAdapter = new OTE.SAPDataSetTableAdapters.SAPTableAdapter();
             this.getModemsTableAdapter1 = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.lblModemId = new System.Windows.Forms.Label();
@@ -82,7 +80,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvModemsPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getModemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiaxeirhshExoplismouOTEDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sAPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -443,20 +440,6 @@
             this.label6.TabIndex = 29;
             this.label6.Text = "Status";
             // 
-            // sAPDataSet
-            // 
-            this.sAPDataSet.DataSetName = "SAPDataSet";
-            this.sAPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sAPBindingSource
-            // 
-            this.sAPBindingSource.DataMember = "SAP";
-            this.sAPBindingSource.DataSource = this.sAPDataSet;
-            // 
-            // sAPTableAdapter
-            // 
-            this.sAPTableAdapter.ClearBeforeFill = true;
-            // 
             // getModemsTableAdapter1
             // 
             this.getModemsTableAdapter1.ClearBeforeFill = true;
@@ -582,7 +565,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvModemsPersonal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getModemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiaxeirhshExoplismouOTEDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sAPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sAPBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -625,9 +607,7 @@
         private System.Windows.Forms.Label lblErrOkOffUpdate;
         private System.Windows.Forms.DataGridView dgvModemsPersonal;
         private System.Windows.Forms.Label label6;
-        private SAPDataSet sAPDataSet;
         private System.Windows.Forms.BindingSource sAPBindingSource;
-        private SAPDataSetTableAdapters.SAPTableAdapter sAPTableAdapter;
         private System.Windows.Forms.BindingSource getModemsBindingSource;
         private DiaxeirhshExoplismouOTEDataSet DiaxeirhshExoplismouOTEDataSet;
         private DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter getModemsTableAdapter1;

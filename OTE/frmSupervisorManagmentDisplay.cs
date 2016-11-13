@@ -55,7 +55,7 @@ namespace OTE
 
         private void btnManageUsers_Click(object sender, EventArgs e)
         {
-            frmUsersManagement mI = new frmUsersManagement(UserName, UserId);
+            frmUsersManagement mI = new frmUsersManagement();
             mI.Show();
             this.Hide();
         }

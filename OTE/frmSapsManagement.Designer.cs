@@ -31,30 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSapsManagement));
             this.sAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sAPDataSet = new OTE.SAPDataSet();
-            this.sAPTableAdapter = new OTE.SAPDataSetTableAdapters.SAPTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typosMhxanhmatosIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.sAPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sAPDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // sAPBindingSource
-            // 
-            this.sAPBindingSource.DataMember = "SAP";
-            this.sAPBindingSource.DataSource = this.sAPDataSet;
-            // 
-            // sAPDataSet
-            // 
-            this.sAPDataSet.DataSetName = "SAPDataSet";
-            this.sAPDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sAPTableAdapter
-            // 
-            this.sAPTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridView1
             // 
@@ -105,7 +88,6 @@
             this.Text = "SAP\'s Management";
             this.Load += new System.EventHandler(this.SapsManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.sAPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sAPDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -113,9 +95,7 @@
 
         #endregion
 
-        private SAPDataSet sAPDataSet;
         private System.Windows.Forms.BindingSource sAPBindingSource;
-        private SAPDataSetTableAdapters.SAPTableAdapter sAPTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sapDataGridViewTextBoxColumn;

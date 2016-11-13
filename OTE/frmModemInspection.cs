@@ -62,8 +62,6 @@ namespace OTE
         #region Events
         private void ModemInspection_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sAPDataSet.SAP' table. You can move, or remove it, as needed.
-            this.sAPTableAdapter.Fill(this.sAPDataSet.SAP);
             LoadSaps();
             LoadDailyModems();
             this.Mode = Enums.SavingMode.Insert;
