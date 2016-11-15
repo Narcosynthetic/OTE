@@ -100,7 +100,7 @@ namespace OTE
 
         private void btnDeleteSap_Click(object sender, EventArgs e)
         {
-            DeleteSapToDB();
+            //DeleteSapToDB();
             PopulateGrid();
 
         }
