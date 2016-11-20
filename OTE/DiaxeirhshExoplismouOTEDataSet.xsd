@@ -60,7 +60,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GetSapsDetailsTableAdapter" GeneratorDataComponentClassName="GetSapsDetailsTableAdapter" Name="GetSapsDetails" UserDataComponentName="GetSapsDetailsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DiaxeirhshExoplismouOTEConnectionString (Settings)" DbObjectName="DiaxeirhshExoplismouOTE.dbo.GetSapsDetails" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetSapsDetails" GetMethodModifier="Public" GetMethodName="GetSapsDetails" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetSapsDetails" UserSourceName="GetSapsDetails">
+              <DbSource ConnectionRef="DiaxeirhshExoplismouOTEConnectionString (Settings)" DbObjectName="DiaxeirhshExoplismouOTE.dbo.GetSapsDetails" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetSapsDetails" GetMethodModifier="Public" GetMethodName="GetSapsDetails" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetSapsDetails" UserSourceName="GetSapsDetails">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.GetSapsDetails</CommandText>
@@ -74,6 +74,8 @@
             <Mappings>
               <Mapping SourceColumn="SAP" DataSetColumn="SAP" />
               <Mapping SourceColumn="TyposDescr" DataSetColumn="TyposDescr" />
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="TyposId" DataSetColumn="TyposId" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -125,7 +127,7 @@
   <xs:element name="DiaxeirhshExoplismouOTEDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DiaxeirhshExoplismouOTEDataSet" msprop:Generator_UserDSName="DiaxeirhshExoplismouOTEDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="GetModems" msprop:Generator_TableClassName="GetModemsDataTable" msprop:Generator_TableVarName="tableGetModems" msprop:Generator_TablePropName="GetModems" msprop:Generator_RowDeletingName="GetModemsRowDeleting" msprop:Generator_RowChangingName="GetModemsRowChanging" msprop:Generator_RowEvHandlerName="GetModemsRowChangeEventHandler" msprop:Generator_RowDeletedName="GetModemsRowDeleted" msprop:Generator_UserTableName="GetModems" msprop:Generator_RowChangedName="GetModemsRowChanged" msprop:Generator_RowEvArgName="GetModemsRowChangeEvent" msprop:Generator_RowClassName="GetModemsRow">
+        <xs:element name="GetModems" msprop:Generator_TableClassName="GetModemsDataTable" msprop:Generator_TableVarName="tableGetModems" msprop:Generator_RowChangedName="GetModemsRowChanged" msprop:Generator_TablePropName="GetModems" msprop:Generator_RowDeletingName="GetModemsRowDeleting" msprop:Generator_RowChangingName="GetModemsRowChanging" msprop:Generator_RowEvHandlerName="GetModemsRowChangeEventHandler" msprop:Generator_RowDeletedName="GetModemsRowDeleted" msprop:Generator_RowClassName="GetModemsRow" msprop:Generator_UserTableName="GetModems" msprop:Generator_RowEvArgName="GetModemsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -156,7 +158,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GetUsers" msprop:Generator_TableClassName="GetUsersDataTable" msprop:Generator_TableVarName="tableGetUsers" msprop:Generator_RowChangedName="GetUsersRowChanged" msprop:Generator_TablePropName="GetUsers" msprop:Generator_RowDeletingName="GetUsersRowDeleting" msprop:Generator_RowChangingName="GetUsersRowChanging" msprop:Generator_RowEvHandlerName="GetUsersRowChangeEventHandler" msprop:Generator_RowDeletedName="GetUsersRowDeleted" msprop:Generator_RowClassName="GetUsersRow" msprop:Generator_UserTableName="GetUsers" msprop:Generator_RowEvArgName="GetUsersRowChangeEvent">
+        <xs:element name="GetUsers" msprop:Generator_TableClassName="GetUsersDataTable" msprop:Generator_TableVarName="tableGetUsers" msprop:Generator_TablePropName="GetUsers" msprop:Generator_RowDeletingName="GetUsersRowDeleting" msprop:Generator_RowChangingName="GetUsersRowChanging" msprop:Generator_RowEvHandlerName="GetUsersRowChangeEventHandler" msprop:Generator_RowDeletedName="GetUsersRowDeleted" msprop:Generator_UserTableName="GetUsers" msprop:Generator_RowChangedName="GetUsersRowChanged" msprop:Generator_RowEvArgName="GetUsersRowChangeEvent" msprop:Generator_RowClassName="GetUsersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
@@ -192,7 +194,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GetSapsDetails" msprop:Generator_TableClassName="GetSapsDetailsDataTable" msprop:Generator_TableVarName="tableGetSapsDetails" msprop:Generator_TablePropName="GetSapsDetails" msprop:Generator_RowDeletingName="GetSapsDetailsRowDeleting" msprop:Generator_RowChangingName="GetSapsDetailsRowChanging" msprop:Generator_RowEvHandlerName="GetSapsDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="GetSapsDetailsRowDeleted" msprop:Generator_UserTableName="GetSapsDetails" msprop:Generator_RowChangedName="GetSapsDetailsRowChanged" msprop:Generator_RowEvArgName="GetSapsDetailsRowChangeEvent" msprop:Generator_RowClassName="GetSapsDetailsRow">
+        <xs:element name="GetSapsDetails" msprop:Generator_TableClassName="GetSapsDetailsDataTable" msprop:Generator_TableVarName="tableGetSapsDetails" msprop:Generator_RowChangedName="GetSapsDetailsRowChanged" msprop:Generator_TablePropName="GetSapsDetails" msprop:Generator_RowDeletingName="GetSapsDetailsRowDeleting" msprop:Generator_RowChangingName="GetSapsDetailsRowChanging" msprop:Generator_RowEvHandlerName="GetSapsDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="GetSapsDetailsRowDeleted" msprop:Generator_RowClassName="GetSapsDetailsRow" msprop:Generator_UserTableName="GetSapsDetails" msprop:Generator_RowEvArgName="GetSapsDetailsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SAP" msprop:Generator_ColumnVarNameInTable="columnSAP" msprop:Generator_ColumnPropNameInRow="SAP" msprop:Generator_ColumnPropNameInTable="SAPColumn" msprop:Generator_UserColumnName="SAP" type="xs:int" />
@@ -203,10 +205,12 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="TyposId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTyposId" msprop:Generator_ColumnPropNameInRow="TyposId" msprop:Generator_ColumnPropNameInTable="TyposIdColumn" msprop:Generator_UserColumnName="TyposId" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GetRoles" msprop:Generator_TableClassName="GetRolesDataTable" msprop:Generator_TableVarName="tableGetRoles" msprop:Generator_TablePropName="GetRoles" msprop:Generator_RowDeletingName="GetRolesRowDeleting" msprop:Generator_RowChangingName="GetRolesRowChanging" msprop:Generator_RowEvHandlerName="GetRolesRowChangeEventHandler" msprop:Generator_RowDeletedName="GetRolesRowDeleted" msprop:Generator_UserTableName="GetRoles" msprop:Generator_RowChangedName="GetRolesRowChanged" msprop:Generator_RowEvArgName="GetRolesRowChangeEvent" msprop:Generator_RowClassName="GetRolesRow">
+        <xs:element name="GetRoles" msprop:Generator_TableClassName="GetRolesDataTable" msprop:Generator_TableVarName="tableGetRoles" msprop:Generator_RowChangedName="GetRolesRowChanged" msprop:Generator_TablePropName="GetRoles" msprop:Generator_RowDeletingName="GetRolesRowDeleting" msprop:Generator_RowChangingName="GetRolesRowChanging" msprop:Generator_RowEvHandlerName="GetRolesRowChangeEventHandler" msprop:Generator_RowDeletedName="GetRolesRowDeleted" msprop:Generator_RowClassName="GetRolesRow" msprop:Generator_UserTableName="GetRoles" msprop:Generator_RowEvArgName="GetRolesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -220,7 +224,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GetUsersRoles" msprop:Generator_TableClassName="GetUsersRolesDataTable" msprop:Generator_TableVarName="tableGetUsersRoles" msprop:Generator_TablePropName="GetUsersRoles" msprop:Generator_RowDeletingName="GetUsersRolesRowDeleting" msprop:Generator_RowChangingName="GetUsersRolesRowChanging" msprop:Generator_RowEvHandlerName="GetUsersRolesRowChangeEventHandler" msprop:Generator_RowDeletedName="GetUsersRolesRowDeleted" msprop:Generator_UserTableName="GetUsersRoles" msprop:Generator_RowChangedName="GetUsersRolesRowChanged" msprop:Generator_RowEvArgName="GetUsersRolesRowChangeEvent" msprop:Generator_RowClassName="GetUsersRolesRow">
+        <xs:element name="GetUsersRoles" msprop:Generator_TableClassName="GetUsersRolesDataTable" msprop:Generator_TableVarName="tableGetUsersRoles" msprop:Generator_RowChangedName="GetUsersRolesRowChanged" msprop:Generator_TablePropName="GetUsersRoles" msprop:Generator_RowDeletingName="GetUsersRolesRowDeleting" msprop:Generator_RowChangingName="GetUsersRolesRowChanging" msprop:Generator_RowEvHandlerName="GetUsersRolesRowChangeEventHandler" msprop:Generator_RowDeletedName="GetUsersRolesRowDeleted" msprop:Generator_RowClassName="GetUsersRolesRow" msprop:Generator_UserTableName="GetUsersRoles" msprop:Generator_RowEvArgName="GetUsersRolesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserId" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" type="xs:int" />
@@ -251,6 +255,11 @@
     <xs:unique name="GetUsers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:GetUsers" />
       <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+    <xs:unique name="GetSapsDetails_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GetSapsDetails" />
+      <xs:field xpath="mstns:Id" />
+      <xs:field xpath="mstns:TyposId" />
     </xs:unique>
     <xs:unique name="GetRoles_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:GetRoles" />

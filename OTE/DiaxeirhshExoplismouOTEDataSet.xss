@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:GetModems" ZOrder="5" X="70" Y="70" Height="210" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
     <Shape ID="DesignTable:GetUsers" ZOrder="3" X="52" Y="323" Height="191" Width="196" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
-    <Shape ID="DesignTable:GetSapsDetails" ZOrder="4" X="417" Y="77" Height="115" Width="231" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
+    <Shape ID="DesignTable:GetSapsDetails" ZOrder="4" X="462" Y="66" Height="153" Width="231" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:GetRoles" ZOrder="2" X="406" Y="245" Height="115" Width="196" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />
     <Shape ID="DesignTable:GetUsersRoles" ZOrder="1" X="358" Y="404" Height="153" Width="227" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
   </Shapes>

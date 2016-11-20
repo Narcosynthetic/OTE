@@ -1109,6 +1109,10 @@ namespace OTE {
             
             private global::System.Data.DataColumn columnTyposDescr;
             
+            private global::System.Data.DataColumn columnId;
+            
+            private global::System.Data.DataColumn columnTyposId;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public GetSapsDetailsDataTable() {
@@ -1160,6 +1164,22 @@ namespace OTE {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdColumn {
+                get {
+                    return this.columnId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TyposIdColumn {
+                get {
+                    return this.columnTyposId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1199,10 +1219,20 @@ namespace OTE {
                 GetSapsDetailsRow rowGetSapsDetailsRow = ((GetSapsDetailsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SAP,
-                        TyposDescr};
+                        TyposDescr,
+                        null,
+                        null};
                 rowGetSapsDetailsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGetSapsDetailsRow);
                 return rowGetSapsDetailsRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetSapsDetailsRow FindByIdTyposId(int Id, int TyposId) {
+                return ((GetSapsDetailsRow)(this.Rows.Find(new object[] {
+                            Id,
+                            TyposId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1224,6 +1254,8 @@ namespace OTE {
             internal void InitVars() {
                 this.columnSAP = base.Columns["SAP"];
                 this.columnTyposDescr = base.Columns["TyposDescr"];
+                this.columnId = base.Columns["Id"];
+                this.columnTyposId = base.Columns["TyposId"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1233,9 +1265,26 @@ namespace OTE {
                 base.Columns.Add(this.columnSAP);
                 this.columnTyposDescr = new global::System.Data.DataColumn("TyposDescr", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTyposDescr);
+                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId);
+                this.columnTyposId = new global::System.Data.DataColumn("TyposId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTyposId);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnId,
+                                this.columnTyposId}, true));
                 this.columnSAP.AllowDBNull = false;
                 this.columnTyposDescr.AllowDBNull = false;
                 this.columnTyposDescr.MaxLength = 10;
+                this.columnId.AutoIncrement = true;
+                this.columnId.AutoIncrementSeed = -1;
+                this.columnId.AutoIncrementStep = -1;
+                this.columnId.AllowDBNull = false;
+                this.columnId.ReadOnly = true;
+                this.columnTyposId.AutoIncrement = true;
+                this.columnTyposId.AutoIncrementSeed = -1;
+                this.columnTyposId.AutoIncrementStep = -1;
+                this.columnTyposId.AllowDBNull = false;
+                this.columnTyposId.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2278,6 +2327,28 @@ namespace OTE {
                     this[this.tableGetSapsDetails.TyposDescrColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Id {
+                get {
+                    return ((int)(this[this.tableGetSapsDetails.IdColumn]));
+                }
+                set {
+                    this[this.tableGetSapsDetails.IdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int TyposId {
+                get {
+                    return ((int)(this[this.tableGetSapsDetails.TyposIdColumn]));
+                }
+                set {
+                    this[this.tableGetSapsDetails.TyposIdColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -3076,6 +3147,8 @@ namespace OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters {
             tableMapping.DataSetTable = "GetSapsDetails";
             tableMapping.ColumnMappings.Add("SAP", "SAP");
             tableMapping.ColumnMappings.Add("TyposDescr", "TyposDescr");
+            tableMapping.ColumnMappings.Add("Id", "Id");
+            tableMapping.ColumnMappings.Add("TyposId", "TyposId");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
