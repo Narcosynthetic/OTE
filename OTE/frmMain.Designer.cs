@@ -32,7 +32,6 @@
             this.mnuMain = new System.Windows.Forms.MenuStrip();
             this.mniEquipment = new System.Windows.Forms.ToolStripMenuItem();
             this.mniModemsInspection = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniModemsManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.mniSatelitesInspection = new System.Windows.Forms.ToolStripMenuItem();
             this.mniSapManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.mniReports = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +62,6 @@
             // 
             this.mniEquipment.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniModemsInspection,
-            this.mniModemsManagement,
             this.mniSatelitesInspection,
             this.mniSapManagement});
             this.mniEquipment.Name = "mniEquipment";
@@ -74,29 +72,22 @@
             // 
             this.mniModemsInspection.Enabled = false;
             this.mniModemsInspection.Name = "mniModemsInspection";
-            this.mniModemsInspection.Size = new System.Drawing.Size(195, 22);
+            this.mniModemsInspection.Size = new System.Drawing.Size(179, 22);
             this.mniModemsInspection.Text = "Modems Inspection";
             this.mniModemsInspection.Click += new System.EventHandler(this.mniModems_Click);
-            // 
-            // mniModemsManagement
-            // 
-            this.mniModemsManagement.Enabled = false;
-            this.mniModemsManagement.Name = "mniModemsManagement";
-            this.mniModemsManagement.Size = new System.Drawing.Size(195, 22);
-            this.mniModemsManagement.Text = "Modems Management";
             // 
             // mniSatelitesInspection
             // 
             this.mniSatelitesInspection.Enabled = false;
             this.mniSatelitesInspection.Name = "mniSatelitesInspection";
-            this.mniSatelitesInspection.Size = new System.Drawing.Size(195, 22);
+            this.mniSatelitesInspection.Size = new System.Drawing.Size(179, 22);
             this.mniSatelitesInspection.Text = "Satellites Inspection";
             // 
             // mniSapManagement
             // 
             this.mniSapManagement.Enabled = false;
             this.mniSapManagement.Name = "mniSapManagement";
-            this.mniSapManagement.Size = new System.Drawing.Size(195, 22);
+            this.mniSapManagement.Size = new System.Drawing.Size(179, 22);
             this.mniSapManagement.Text = "SAP Management";
             this.mniSapManagement.Click += new System.EventHandler(this.mniSapManagement_Click);
             // 
@@ -135,7 +126,7 @@
             // 
             this.mniUsersRoles.Enabled = false;
             this.mniUsersRoles.Name = "mniUsersRoles";
-            this.mniUsersRoles.Size = new System.Drawing.Size(152, 22);
+            this.mniUsersRoles.Size = new System.Drawing.Size(146, 22);
             this.mniUsersRoles.Text = "Users && Roles";
             this.mniUsersRoles.Click += new System.EventHandler(this.mniUsersRoles_Click);
             // 
@@ -200,6 +191,5 @@
         private System.Windows.Forms.ToolStripMenuItem mniUsersRoles;
         private System.Windows.Forms.ToolStripMenuItem mniReport1;
         private System.Windows.Forms.ToolStripMenuItem mniReport2;
-        private System.Windows.Forms.ToolStripMenuItem mniModemsManagement;
     }
 }

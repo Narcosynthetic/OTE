@@ -15,25 +15,13 @@ namespace OTE
     public partial class frmModemInspection : Form
     {
         #region Properties
-        //private int UserId
-        //{
-        //    get;
-        //    set;
-        //}
-
-        //private string UserName
-        //{
-        //    get;
-        //    set;
-        //}
-
         private Enums.SavingMode Mode
         {
             get;
             set;
         }
 
-        private string ModemId
+        private int ModemId
         {
             get;
             set;
@@ -78,14 +66,14 @@ namespace OTE
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            getModemsBindingSource.DataSource = GetModemsFromDB(dtpDateFrom.Checked ? dtpDateFrom.Value : Helpers.GetDefaultDate(), dtpDateFrom.Checked ? dtpDateTo.Value : Helpers.GetDefaultDate());
+            getModemsBindingSource.DataSource = GetModemsFromDB(dtpDateFrom.Checked ? dtpDateFrom.Value.Date : Helpers.GetDefaultDate(), dtpDateFrom.Checked ? dtpDateTo.Value.Date : Helpers.GetDefaultDate());
         }
 
         private void dgvModemsPersonal_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex > -1)
             {
-                var id = dgvModemsPersonal.Rows[e.RowIndex].Cells["Id"].Value.ToString();
+                var id = int.Parse(dgvModemsPersonal.Rows[e.RowIndex].Cells["Id"].Value.ToString());
                 this.ModemId = id;
                 LoadModem(this.ModemId);
                 this.Mode = Enums.SavingMode.Update;
@@ -363,7 +351,7 @@ namespace OTE
             return modemsDT;
         }
 
-        private void LoadModem(string modemId)
+        private void LoadModem(int modemId)
         {
             DataTable modemDT = GetModemFromDB(modemId);
             if (modemDT.Rows.Count > 0)
@@ -395,7 +383,7 @@ namespace OTE
             }
         }
 
-        private DataTable GetModemFromDB(string id)
+        private DataTable GetModemFromDB(int id)
         {
             DataTable modemDT = new DataTable();
 

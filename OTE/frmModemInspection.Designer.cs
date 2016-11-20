@@ -62,20 +62,6 @@
             this.lblErrSn = new System.Windows.Forms.Label();
             this.lblErrOkOffUpdate = new System.Windows.Forms.Label();
             this.dgvModemsPersonal = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SapId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OkOffUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Paratiriseis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sapIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serialNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paratiriseisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.getModemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DiaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
             this.label6 = new System.Windows.Forms.Label();
@@ -89,6 +75,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtSNSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SapId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paratiriseis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModemsPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getModemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiaxeirhshExoplismouOTEDataSet)).BeginInit();
@@ -410,15 +402,7 @@
             this.Sap,
             this.SerialNumber,
             this.Status,
-            this.Paratiriseis,
-            this.idDataGridViewTextBoxColumn,
-            this.sapIdDataGridViewTextBoxColumn,
-            this.sapDataGridViewTextBoxColumn,
-            this.serialNumberDataGridViewTextBoxColumn,
-            this.statusIdDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.paratiriseisDataGridViewTextBoxColumn,
-            this.OkOffUpdate});
+            this.Paratiriseis});
             this.dgvModemsPersonal.DataSource = this.getModemsBindingSource;
             this.dgvModemsPersonal.Location = new System.Drawing.Point(481, 96);
             this.dgvModemsPersonal.MultiSelect = false;
@@ -429,108 +413,6 @@
             this.dgvModemsPersonal.TabIndex = 28;
             this.dgvModemsPersonal.TabStop = false;
             this.dgvModemsPersonal.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvModemsPersonal_CellMouseDoubleClick);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // SapId
-            // 
-            this.SapId.DataPropertyName = "SapId";
-            this.SapId.HeaderText = "SapId";
-            this.SapId.Name = "SapId";
-            this.SapId.ReadOnly = true;
-            this.SapId.Visible = false;
-            // 
-            // Sap
-            // 
-            this.Sap.DataPropertyName = "Sap";
-            this.Sap.HeaderText = "SAP";
-            this.Sap.Name = "Sap";
-            this.Sap.ReadOnly = true;
-            // 
-            // SerialNumber
-            // 
-            this.SerialNumber.DataPropertyName = "SerialNumber";
-            this.SerialNumber.HeaderText = "Serial Number";
-            this.SerialNumber.Name = "SerialNumber";
-            this.SerialNumber.ReadOnly = true;
-            // 
-            // OkOffUpdate
-            // 
-            this.OkOffUpdate.DataPropertyName = "OkOffUpdate";
-            this.OkOffUpdate.HeaderText = "StatusID";
-            this.OkOffUpdate.Name = "OkOffUpdate";
-            this.OkOffUpdate.ReadOnly = true;
-            this.OkOffUpdate.Visible = false;
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // Paratiriseis
-            // 
-            this.Paratiriseis.DataPropertyName = "Paratiriseis";
-            this.Paratiriseis.HeaderText = "Notes";
-            this.Paratiriseis.Name = "Paratiriseis";
-            this.Paratiriseis.ReadOnly = true;
-            this.Paratiriseis.Width = 200;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sapIdDataGridViewTextBoxColumn
-            // 
-            this.sapIdDataGridViewTextBoxColumn.DataPropertyName = "SapId";
-            this.sapIdDataGridViewTextBoxColumn.HeaderText = "SapId";
-            this.sapIdDataGridViewTextBoxColumn.Name = "sapIdDataGridViewTextBoxColumn";
-            this.sapIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sapDataGridViewTextBoxColumn
-            // 
-            this.sapDataGridViewTextBoxColumn.DataPropertyName = "Sap";
-            this.sapDataGridViewTextBoxColumn.HeaderText = "Sap";
-            this.sapDataGridViewTextBoxColumn.Name = "sapDataGridViewTextBoxColumn";
-            this.sapDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // serialNumberDataGridViewTextBoxColumn
-            // 
-            this.serialNumberDataGridViewTextBoxColumn.DataPropertyName = "SerialNumber";
-            this.serialNumberDataGridViewTextBoxColumn.HeaderText = "SerialNumber";
-            this.serialNumberDataGridViewTextBoxColumn.Name = "serialNumberDataGridViewTextBoxColumn";
-            this.serialNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusIdDataGridViewTextBoxColumn
-            // 
-            this.statusIdDataGridViewTextBoxColumn.DataPropertyName = "StatusId";
-            this.statusIdDataGridViewTextBoxColumn.HeaderText = "StatusId";
-            this.statusIdDataGridViewTextBoxColumn.Name = "statusIdDataGridViewTextBoxColumn";
-            this.statusIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // paratiriseisDataGridViewTextBoxColumn
-            // 
-            this.paratiriseisDataGridViewTextBoxColumn.DataPropertyName = "Paratiriseis";
-            this.paratiriseisDataGridViewTextBoxColumn.HeaderText = "Paratiriseis";
-            this.paratiriseisDataGridViewTextBoxColumn.Name = "paratiriseisDataGridViewTextBoxColumn";
-            this.paratiriseisDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // getModemsBindingSource
             // 
@@ -626,6 +508,51 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // SapId
+            // 
+            this.SapId.DataPropertyName = "SapId";
+            this.SapId.HeaderText = "SapId";
+            this.SapId.Name = "SapId";
+            this.SapId.ReadOnly = true;
+            this.SapId.Visible = false;
+            // 
+            // Sap
+            // 
+            this.Sap.DataPropertyName = "Sap";
+            this.Sap.HeaderText = "SAP";
+            this.Sap.Name = "Sap";
+            this.Sap.ReadOnly = true;
+            // 
+            // SerialNumber
+            // 
+            this.SerialNumber.DataPropertyName = "SerialNumber";
+            this.SerialNumber.HeaderText = "Serial Number";
+            this.SerialNumber.Name = "SerialNumber";
+            this.SerialNumber.ReadOnly = true;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Paratiriseis
+            // 
+            this.Paratiriseis.DataPropertyName = "Paratiriseis";
+            this.Paratiriseis.HeaderText = "Notes";
+            this.Paratiriseis.Name = "Paratiriseis";
+            this.Paratiriseis.ReadOnly = true;
+            this.Paratiriseis.Width = 200;
             // 
             // frmModemInspection
             // 
@@ -726,20 +653,6 @@
         private DiaxeirhshExoplismouOTEDataSet DiaxeirhshExoplismouOTEDataSet;
         private DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter getModemsTableAdapter1;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SapId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SerialNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OkOffUpdate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Paratiriseis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sapIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sapDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn serialNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paratiriseisDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpDateFrom;
         private System.Windows.Forms.DateTimePicker dtpDateTo;
@@ -747,5 +660,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtSNSearch;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SapId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SerialNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Paratiriseis;
     }
 }

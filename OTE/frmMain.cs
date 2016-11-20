@@ -106,7 +106,6 @@ namespace OTE
                 if ((Enums.UserRoles)Enum.Parse(typeof(Enums.UserRoles), roleId) == Enums.UserRoles.Technician)
                 {
                     mniModemsInspection.Enabled = true;
-                    mniModemsManagement.Enabled = true;
                     mniSatelitesInspection.Enabled = true;
                 }
 
