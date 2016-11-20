@@ -97,12 +97,7 @@ namespace OTE
                         {
                             DataTable dt = new DataTable();
                             da.Fill(dt);
-
-                            //DataRow defaultRow;
-                            //defaultRow = dt.NewRow();
-                            //defaultRow.ItemArray = new object[] { 0, "- Select -" };
-                            //dt.Rows.InsertAt(defaultRow, 0);
-
+                            
                             if (dt.Rows.Count > 0)
                             {
                                 cbxSap.DataSource = dt;

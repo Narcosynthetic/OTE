@@ -55,6 +55,10 @@ namespace OTE
         {
             toolStripStatusLabel1.Text = "Welcome " + UserName;
             ManageUserAccess();
+
+            frmHome frmHome = new frmHome();
+            frmHome.MdiParent = this;
+            frmHome.Show();
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
