@@ -8,6 +8,17 @@ namespace OTE
 {
     public static class Helpers
     {
+        public static DateTime GetDefaultDate()
+        {
+            DateTime defaultDate = new DateTime(1900, 1, 1);
+            return defaultDate;
+        }
+
+        public static bool IsNumeric(string input)
+        {
+            int test;
+            return int.TryParse(input, out test);
+        }
     }
 
     public static class Enums

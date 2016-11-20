@@ -69,13 +69,6 @@
             this.OkOffUpdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Paratiriseis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getModemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DiaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
-            this.label6 = new System.Windows.Forms.Label();
-            this.sAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getModemsTableAdapter1 = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.lblModemId = new System.Windows.Forms.Label();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sapIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +76,19 @@
             this.statusIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paratiriseisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getModemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DiaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
+            this.label6 = new System.Windows.Forms.Label();
+            this.getModemsTableAdapter1 = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.sAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtpDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.dtpDateTo = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtSNSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModemsPersonal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getModemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DiaxeirhshExoplismouOTEDataSet)).BeginInit();
@@ -403,7 +409,6 @@
             this.SapId,
             this.Sap,
             this.SerialNumber,
-            this.OkOffUpdate,
             this.Status,
             this.Paratiriseis,
             this.idDataGridViewTextBoxColumn,
@@ -412,7 +417,8 @@
             this.serialNumberDataGridViewTextBoxColumn,
             this.statusIdDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn,
-            this.paratiriseisDataGridViewTextBoxColumn});
+            this.paratiriseisDataGridViewTextBoxColumn,
+            this.OkOffUpdate});
             this.dgvModemsPersonal.DataSource = this.getModemsBindingSource;
             this.dgvModemsPersonal.Location = new System.Drawing.Point(481, 96);
             this.dgvModemsPersonal.MultiSelect = false;
@@ -477,49 +483,6 @@
             this.Paratiriseis.ReadOnly = true;
             this.Paratiriseis.Width = 200;
             // 
-            // getModemsBindingSource
-            // 
-            this.getModemsBindingSource.DataMember = "GetModems";
-            this.getModemsBindingSource.DataSource = this.DiaxeirhshExoplismouOTEDataSet;
-            // 
-            // DiaxeirhshExoplismouOTEDataSet
-            // 
-            this.DiaxeirhshExoplismouOTEDataSet.DataSetName = "DiaxeirhshExoplismouOTEDataSet";
-            this.DiaxeirhshExoplismouOTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(28, 389);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 13);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Status";
-            // 
-            // getModemsTableAdapter1
-            // 
-            this.getModemsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(137, 550);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 30;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // lblModemId
-            // 
-            this.lblModemId.AutoSize = true;
-            this.lblModemId.Location = new System.Drawing.Point(294, 38);
-            this.lblModemId.Name = "lblModemId";
-            this.lblModemId.Size = new System.Drawing.Size(61, 13);
-            this.lblModemId.TabIndex = 31;
-            this.lblModemId.Text = "lblModemId";
-            this.lblModemId.Visible = false;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -569,12 +532,113 @@
             this.paratiriseisDataGridViewTextBoxColumn.Name = "paratiriseisDataGridViewTextBoxColumn";
             this.paratiriseisDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // getModemsBindingSource
+            // 
+            this.getModemsBindingSource.DataMember = "GetModems";
+            this.getModemsBindingSource.DataSource = this.DiaxeirhshExoplismouOTEDataSet;
+            // 
+            // DiaxeirhshExoplismouOTEDataSet
+            // 
+            this.DiaxeirhshExoplismouOTEDataSet.DataSetName = "DiaxeirhshExoplismouOTEDataSet";
+            this.DiaxeirhshExoplismouOTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 389);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Status";
+            // 
+            // getModemsTableAdapter1
+            // 
+            this.getModemsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(137, 550);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 30;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(478, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 13);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Date From";
+            // 
+            // dtpDateFrom
+            // 
+            this.dtpDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateFrom.Location = new System.Drawing.Point(481, 49);
+            this.dtpDateFrom.Name = "dtpDateFrom";
+            this.dtpDateFrom.ShowCheckBox = true;
+            this.dtpDateFrom.Size = new System.Drawing.Size(96, 20);
+            this.dtpDateFrom.TabIndex = 32;
+            // 
+            // dtpDateTo
+            // 
+            this.dtpDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDateTo.Location = new System.Drawing.Point(591, 49);
+            this.dtpDateTo.Name = "dtpDateTo";
+            this.dtpDateTo.ShowCheckBox = true;
+            this.dtpDateTo.Size = new System.Drawing.Size(96, 20);
+            this.dtpDateTo.TabIndex = 34;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(588, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(46, 13);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Date To";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(691, 32);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(27, 13);
+            this.label9.TabIndex = 36;
+            this.label9.Text = "S/N";
+            // 
+            // txtSNSearch
+            // 
+            this.txtSNSearch.Location = new System.Drawing.Point(693, 49);
+            this.txtSNSearch.Name = "txtSNSearch";
+            this.txtSNSearch.Size = new System.Drawing.Size(236, 20);
+            this.txtSNSearch.TabIndex = 35;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(948, 46);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 37;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // frmModemInspection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 598);
-            this.Controls.Add(this.lblModemId);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtSNSearch);
+            this.Controls.Add(this.dtpDateTo);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.dtpDateFrom);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dgvModemsPersonal);
@@ -662,7 +726,6 @@
         private DiaxeirhshExoplismouOTEDataSet DiaxeirhshExoplismouOTEDataSet;
         private DiaxeirhshExoplismouOTEDataSetTableAdapters.GetModemsTableAdapter getModemsTableAdapter1;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Label lblModemId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn SapId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sap;
@@ -677,5 +740,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn statusIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paratiriseisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtpDateFrom;
+        private System.Windows.Forms.DateTimePicker dtpDateTo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtSNSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

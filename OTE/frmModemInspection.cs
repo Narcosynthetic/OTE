@@ -76,6 +76,11 @@ namespace OTE
             ClearForm();
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            getModemsBindingSource.DataSource = GetModemsFromDB(dtpDateFrom.Checked ? dtpDateFrom.Value : Helpers.GetDefaultDate(), dtpDateFrom.Checked ? dtpDateTo.Value : Helpers.GetDefaultDate());
+        }
+
         private void dgvModemsPersonal_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.RowIndex > -1)
@@ -175,7 +180,7 @@ namespace OTE
                         cmd.ExecuteNonQuery();
                         ClearForm();
 
-                        GetModemsFromDB();
+                        GetModemsFromDB(DateTime.Today, DateTime.Today);
                     }
                 }
 
@@ -235,7 +240,7 @@ namespace OTE
                         cmd.ExecuteNonQuery();
                         ClearForm();
 
-                        GetModemsFromDB();
+                        GetModemsFromDB(DateTime.Today, DateTime.Today);
                     }
                 }
 
@@ -326,10 +331,10 @@ namespace OTE
 
         private void LoadDailyModems()
         {
-            getModemsBindingSource.DataSource = GetModemsFromDB();
+            getModemsBindingSource.DataSource = GetModemsFromDB(DateTime.Today, DateTime.Today);
         }
 
-        private DataTable GetModemsFromDB()
+        private DataTable GetModemsFromDB(DateTime? dateFrom, DateTime? dateTo)
         {
             DataTable modemsDT = new DataTable();
 
@@ -341,8 +346,9 @@ namespace OTE
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@userId", ((frmMain)this.MdiParent).UserId);
-                        cmd.Parameters.AddWithValue("@hmeromhniaElenxouApo", DateTime.Today);
-                        cmd.Parameters.AddWithValue("@hmeromhniaElenxouEos", DateTime.Today);
+                        cmd.Parameters.AddWithValue("@hmeromhniaElenxouApo", dateFrom);
+                        cmd.Parameters.AddWithValue("@hmeromhniaElenxouEos", dateTo);
+                        cmd.Parameters.AddWithValue("@serialNumber", txtSNSearch.Text.Trim());
                         cmd.Parameters.AddWithValue("@ordering", "HmeromhniaElenxou desc");
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                             da.Fill(modemsDT);
