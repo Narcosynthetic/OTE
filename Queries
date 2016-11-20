@@ -1,28 +1,19 @@
 USE [DiaxeirhshExoplismouOTE]
 GO
-/****** Object:  StoredProcedure [dbo].[UpdateUser]    Script Date: 20/11/2016 11:57:29 PM ******/
+/****** Object:  StoredProcedure [dbo].[GetTypoiMhxanhmatwn]    Script Date: 21-Nov-16 1:12:19 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create PROCEDURE [dbo].[UpdateUserTheming] 
-(
-	@UserId int,
-	@backColor varchar(50),
-	@foreColor varchar(50)
-)
+ALTER PROCEDURE [dbo].[GetTypoiMhxanhmatwn] 
+
 AS
 BEGIN
 	SET NOCOUNT ON;
+			
+	SELECT [Id]
+      ,[TyposDescr]
+	FROM [dbo].[TypoiMhxanhmatwn] 
 	
-	IF (LEN(@backColor) > 0)
-		UPDATE [dbo].[Users]
-		SET BackColor = @backColor
-		WHERE UserId = @UserId
-     
-	IF (LEN(@foreColor) > 0)
-		UPDATE [dbo].[Users]
-		SET ForeColor = @foreColor
-		WHERE UserId = @UserId
      
 END
