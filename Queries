@@ -1,41 +1,28 @@
 USE [DiaxeirhshExoplismouOTE]
 GO
+/****** Object:  StoredProcedure [dbo].[UpdateUser]    Script Date: 20/11/2016 11:57:29 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create PROCEDURE [dbo].[GetWorkloadStats] 
+create PROCEDURE [dbo].[UpdateUserTheming] 
 (
-	@userId int,
-	@hmeromhniaElenxouApo datetime,
-	@hmeromhniaElenxouEos datetime
+	@UserId int,
+	@backColor varchar(50),
+	@foreColor varchar(50)
 )
 AS
 BEGIN
 	SET NOCOUNT ON;
-
-	DECLARE @TotalModems int
-	DECLARE @TotalIPTVs int
-	DECLARE @TotalSatellites int
-			
-	SELECT @TotalModems = COUNT(m.[Id])
-	FROM [dbo].[TechModem] m
-	WHERE (m.[UserId] = @userId OR @userId = '')
-	AND (m.[HmeromhniaElenxou] >= @hmeromhniaElenxouApo OR @hmeromhniaElenxouApo = '1900-01-01')  
-	AND (m.[HmeromhniaElenxou] <= DATEADD(s, -1, DATEADD(day, 1, DATEADD(day, DATEDIFF(day, 0, @hmeromhniaElenxouEos), 0))) OR @hmeromhniaElenxouEos  = '1900-01-01')
-
-	SELECT @TotalIPTVs = COUNT(i.[Id])
-	FROM [dbo].[TechIPTV] i
-	WHERE (i.[UserId] = @userId OR @userId = '')
-	AND (i.[HmeromhniaElenxou] >= @hmeromhniaElenxouApo OR @hmeromhniaElenxouApo = '1900-01-01')  
-	AND (i.[HmeromhniaElenxou] <= DATEADD(s, -1, DATEADD(day, 1, DATEADD(day, DATEDIFF(day, 0, @hmeromhniaElenxouEos), 0))) OR @hmeromhniaElenxouEos  = '1900-01-01')
 	
-
-	SELECT @TotalSatellites = COUNT(s.[Id])
-	FROM [dbo].[TechSatellites] s
-	WHERE (s.[UserId] = @userId OR @userId = '')
-	AND (s.[HmeromhniaElenxou] >= @hmeromhniaElenxouApo OR @hmeromhniaElenxouApo = '1900-01-01')  
-	AND (s.[HmeromhniaElenxou] <= DATEADD(s, -1, DATEADD(day, 1, DATEADD(day, DATEDIFF(day, 0, @hmeromhniaElenxouEos), 0))) OR @hmeromhniaElenxouEos  = '1900-01-01')
-
-	SELECT @TotalModems TotalModems, @TotalIPTVs TotalIPTVs, @TotalSatellites TotalSatellites
+	IF (LEN(@backColor) > 0)
+		UPDATE [dbo].[Users]
+		SET BackColor = @backColor
+		WHERE UserId = @UserId
+     
+	IF (LEN(@foreColor) > 0)
+		UPDATE [dbo].[Users]
+		SET ForeColor = @foreColor
+		WHERE UserId = @UserId
+     
 END
