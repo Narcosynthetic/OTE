@@ -28,11 +28,11 @@ namespace OTE
             set;
         }
 
-        private string CurrentUserRoleUserId
-        {
-            get;
-            set;
-        }
+        //private string CurrentUserRoleUserId
+        //{
+        //    get;
+        //    set;
+        //}
 
         private string CurrentUserRoleRoleId
         {
@@ -82,10 +82,10 @@ namespace OTE
         {
             if (e.RowIndex > -1)
             {
-                CurrentUserRoleUserId = dgvUsersRoles.Rows[e.RowIndex].Cells["userIdColumn"].Value.ToString();
+                //CurrentUserRoleUserId = dgvUsersRoles.Rows[e.RowIndex].Cells["userIdColumn"].Value.ToString();
                 CurrentUserRoleRoleId = dgvUsersRoles.Rows[e.RowIndex].Cells["roleIdColumn"].Value.ToString();
-                txtUserRoleUserName.Text = dgvUsersRoles.Rows[e.RowIndex].Cells["userNameColumn"].Value.ToString();
-                txtRoleUser.Text = dgvUsersRoles.Rows[e.RowIndex].Cells["roleColumn"].Value.ToString();
+                cbxUserName.SelectedValue = dgvUsersRoles.Rows[e.RowIndex].Cells["userIdColumn"].Value.ToString();
+                cbxRoles.SelectedValue = dgvUsersRoles.Rows[e.RowIndex].Cells["roleIdColumn"].Value.ToString();
             }
         }
 
@@ -159,15 +159,60 @@ namespace OTE
         #endregion
 
         #region Methods
+        //private void LoadUserNames()
+        //{
+        //    try
+        //    {
+        //        using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["Main"].ConnectionString))
+        //        {
+        //            using (SqlCommand cmd = new SqlCommand("[dbo].[GetUserNames]", conn))
+        //            {
+        //                cmd.CommandType = CommandType.StoredProcedure;
+        //                using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+        //                {
+        //                    DataTable dt = new DataTable();
+        //                    da.Fill(dt);
+        //                    if (dt.Rows.Count > 0)
+        //                    {
+        //                        cbxUserName.DataSource = dt;
+        //                        cbxUserName.DisplayMember = "UserName";
+        //                        cbxUserName.ValueMember = "UserId";
+        //                    }
+        //                }
+        //            }
+
+        //        }
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        string error = ex.Message; //sto message property einai apothhkeymenh h timh toy error
+        //        throw;
+        //    }
+        //}
 
         private void LoadUsers()
         {
-            getUsersBindingSource.DataSource = GetUsersFromDB();
+            DataTable dt = GetUsersFromDB();
+            getUsersBindingSource.DataSource = dt;
+            if (dt.Rows.Count > 0)
+            {
+                cbxUserName.DataSource = dt;
+                cbxUserName.DisplayMember = "Username";
+                cbxUserName.ValueMember = "UserID";
+            }
         }
 
         private void LoadRoles()
         {
-            getRolesBindingSource.DataSource = GetRolesFromDB();
+            DataTable dt = GetRolesFromDB();
+            getRolesBindingSource.DataSource = dt;
+            if (dt.Rows.Count > 0)
+            {
+                cbxRoles.DataSource = dt;
+                cbxRoles.DisplayMember = "Role";
+                cbxRoles.ValueMember = "Id";
+            }
         }
 
         private void LoadUsersRoles()
@@ -399,8 +444,8 @@ namespace OTE
                     using (SqlCommand cmd = new SqlCommand("[dbo].[InsertUserRole]", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@UserId", CurrentUserRoleUserId);
-                        cmd.Parameters.AddWithValue("@RoleId", CurrentUserRoleRoleId);
+                        cmd.Parameters.AddWithValue("@UserId", cbxUserName.SelectedValue);
+                        cmd.Parameters.AddWithValue("@RoleId", cbxRoles.SelectedValue);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -422,8 +467,9 @@ namespace OTE
                     using (SqlCommand cmd = new SqlCommand("[dbo].[UpdateUserRole]", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@UserId", CurrentUserRoleUserId);
-                        cmd.Parameters.AddWithValue("@RoleId", CurrentUserRoleRoleId);
+                        cmd.Parameters.AddWithValue("@UserId", cbxUserName.SelectedValue);
+                        cmd.Parameters.AddWithValue("@RoleId", cbxRoles.SelectedValue);
+                        cmd.Parameters.AddWithValue("@oldRoleId", CurrentUserRoleRoleId);
                         cmd.ExecuteNonQuery();
                     }
                 }
@@ -445,8 +491,8 @@ namespace OTE
                     using (SqlCommand cmd = new SqlCommand("[dbo].[DeleteUserRole]", conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@UserId", CurrentUserRoleUserId);
-                        cmd.Parameters.AddWithValue("@RoleId", CurrentUserRoleRoleId);
+                        cmd.Parameters.AddWithValue("@UserId", cbxUserName.SelectedValue);
+                        cmd.Parameters.AddWithValue("@RoleId", cbxRoles.SelectedValue);
                         cmd.ExecuteNonQuery();
                     }
                 }

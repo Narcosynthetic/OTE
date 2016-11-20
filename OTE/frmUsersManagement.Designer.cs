@@ -45,8 +45,15 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
+            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.getUsersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.diaxeirhshExoplismouOTEDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.diaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDeleteRole = new System.Windows.Forms.Button();
             this.btnUpdateRole = new System.Windows.Forms.Button();
@@ -54,43 +61,36 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtRole = new System.Windows.Forms.TextBox();
             this.dgvRoles = new System.Windows.Forms.DataGridView();
-            this.getRolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvUsersRoles = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Role = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diaxeirhshExoplismouOTEDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.diaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
-            this.UserID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.getUsersTableAdapter = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetUsersTableAdapter();
-            this.getRolesTableAdapter = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetRolesTableAdapter();
-            this.getUsersRolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.getUsersRolesTableAdapter = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetUsersRolesTableAdapter();
-            this.txtUserRoleUserName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtRoleUser = new System.Windows.Forms.TextBox();
+            this.getRolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnDeleteUserRole = new System.Windows.Forms.Button();
             this.btnUpdateUserRole = new System.Windows.Forms.Button();
             this.btnAddNewUserRole = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvUsersRoles = new System.Windows.Forms.DataGridView();
             this.userIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roleColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getUsersRolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getUsersTableAdapter = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetUsersTableAdapter();
+            this.getRolesTableAdapter = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetRolesTableAdapter();
+            this.getUsersRolesTableAdapter = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetUsersRolesTableAdapter();
+            this.cbxUserName = new System.Windows.Forms.ComboBox();
+            this.cbxRoles = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getUsersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getRolesBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsersRoles)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getUsersRolesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -252,6 +252,42 @@
             this.dgvUsers.TabIndex = 0;
             this.dgvUsers.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellContentDoubleClick);
             // 
+            // UserID
+            // 
+            this.UserID.DataPropertyName = "UserID";
+            this.UserID.HeaderText = "User ID";
+            this.UserID.Name = "UserID";
+            this.UserID.ReadOnly = true;
+            this.UserID.Width = 70;
+            // 
+            // UserName
+            // 
+            this.UserName.DataPropertyName = "UserName";
+            this.UserName.HeaderText = "UserName";
+            this.UserName.Name = "UserName";
+            this.UserName.ReadOnly = true;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
             // IsActive
             // 
             this.IsActive.DataPropertyName = "IsActive";
@@ -263,6 +299,16 @@
             // 
             this.getUsersBindingSource.DataMember = "GetUsers";
             this.getUsersBindingSource.DataSource = this.diaxeirhshExoplismouOTEDataSetBindingSource;
+            // 
+            // diaxeirhshExoplismouOTEDataSetBindingSource
+            // 
+            this.diaxeirhshExoplismouOTEDataSetBindingSource.DataSource = this.diaxeirhshExoplismouOTEDataSet;
+            this.diaxeirhshExoplismouOTEDataSetBindingSource.Position = 0;
+            // 
+            // diaxeirhshExoplismouOTEDataSet
+            // 
+            this.diaxeirhshExoplismouOTEDataSet.DataSetName = "DiaxeirhshExoplismouOTEDataSet";
+            this.diaxeirhshExoplismouOTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox2
             // 
@@ -343,48 +389,6 @@
             this.dgvRoles.TabIndex = 0;
             this.dgvRoles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRoles_CellContentClick);
             // 
-            // getRolesBindingSource
-            // 
-            this.getRolesBindingSource.DataMember = "GetRoles";
-            this.getRolesBindingSource.DataSource = this.diaxeirhshExoplismouOTEDataSetBindingSource;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnDeleteUserRole);
-            this.groupBox3.Controls.Add(this.btnUpdateUserRole);
-            this.groupBox3.Controls.Add(this.btnAddNewUserRole);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.txtRoleUser);
-            this.groupBox3.Controls.Add(this.txtUserRoleUserName);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.dgvUsersRoles);
-            this.groupBox3.Location = new System.Drawing.Point(339, 307);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(322, 222);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Users && Roles";
-            // 
-            // dgvUsersRoles
-            // 
-            this.dgvUsersRoles.AllowUserToAddRows = false;
-            this.dgvUsersRoles.AllowUserToDeleteRows = false;
-            this.dgvUsersRoles.AutoGenerateColumns = false;
-            this.dgvUsersRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsersRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userIdColumn,
-            this.userNameColumn,
-            this.roleIdColumn,
-            this.roleColumn});
-            this.dgvUsersRoles.DataSource = this.getUsersRolesBindingSource;
-            this.dgvUsersRoles.Location = new System.Drawing.Point(6, 19);
-            this.dgvUsersRoles.Name = "dgvUsersRoles";
-            this.dgvUsersRoles.ReadOnly = true;
-            this.dgvUsersRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsersRoles.Size = new System.Drawing.Size(302, 109);
-            this.dgvUsersRoles.TabIndex = 0;
-            this.dgvUsersRoles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsersRoles_CellDoubleClick);
-            // 
             // Id
             // 
             this.Id.DataPropertyName = "Id";
@@ -401,100 +405,27 @@
             this.Role.ReadOnly = true;
             this.Role.Width = 200;
             // 
-            // diaxeirhshExoplismouOTEDataSetBindingSource
+            // getRolesBindingSource
             // 
-            this.diaxeirhshExoplismouOTEDataSetBindingSource.DataSource = this.diaxeirhshExoplismouOTEDataSet;
-            this.diaxeirhshExoplismouOTEDataSetBindingSource.Position = 0;
+            this.getRolesBindingSource.DataMember = "GetRoles";
+            this.getRolesBindingSource.DataSource = this.diaxeirhshExoplismouOTEDataSetBindingSource;
             // 
-            // diaxeirhshExoplismouOTEDataSet
+            // groupBox3
             // 
-            this.diaxeirhshExoplismouOTEDataSet.DataSetName = "DiaxeirhshExoplismouOTEDataSet";
-            this.diaxeirhshExoplismouOTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // UserID
-            // 
-            this.UserID.DataPropertyName = "UserID";
-            this.UserID.HeaderText = "User ID";
-            this.UserID.Name = "UserID";
-            this.UserID.ReadOnly = true;
-            this.UserID.Width = 70;
-            // 
-            // UserName
-            // 
-            this.UserName.DataPropertyName = "UserName";
-            this.UserName.HeaderText = "UserName";
-            this.UserName.Name = "UserName";
-            this.UserName.ReadOnly = true;
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            // 
-            // FirstName
-            // 
-            this.FirstName.DataPropertyName = "FirstName";
-            this.FirstName.HeaderText = "First Name";
-            this.FirstName.Name = "FirstName";
-            this.FirstName.ReadOnly = true;
-            // 
-            // LastName
-            // 
-            this.LastName.DataPropertyName = "LastName";
-            this.LastName.HeaderText = "Last Name";
-            this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
-            // 
-            // getUsersTableAdapter
-            // 
-            this.getUsersTableAdapter.ClearBeforeFill = true;
-            // 
-            // getRolesTableAdapter
-            // 
-            this.getRolesTableAdapter.ClearBeforeFill = true;
-            // 
-            // getUsersRolesBindingSource
-            // 
-            this.getUsersRolesBindingSource.DataMember = "GetUsersRoles";
-            this.getUsersRolesBindingSource.DataSource = this.diaxeirhshExoplismouOTEDataSetBindingSource;
-            // 
-            // getUsersRolesTableAdapter
-            // 
-            this.getUsersRolesTableAdapter.ClearBeforeFill = true;
-            // 
-            // txtUserRoleUserName
-            // 
-            this.txtUserRoleUserName.Location = new System.Drawing.Point(6, 166);
-            this.txtUserRoleUserName.Name = "txtUserRoleUserName";
-            this.txtUserRoleUserName.Size = new System.Drawing.Size(100, 20);
-            this.txtUserRoleUserName.TabIndex = 4;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 149);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 13);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "UserName";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(109, 150);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Role";
-            // 
-            // txtRoleUser
-            // 
-            this.txtRoleUser.Location = new System.Drawing.Point(112, 166);
-            this.txtRoleUser.Name = "txtRoleUser";
-            this.txtRoleUser.Size = new System.Drawing.Size(100, 20);
-            this.txtRoleUser.TabIndex = 5;
+            this.groupBox3.Controls.Add(this.cbxRoles);
+            this.groupBox3.Controls.Add(this.cbxUserName);
+            this.groupBox3.Controls.Add(this.btnDeleteUserRole);
+            this.groupBox3.Controls.Add(this.btnUpdateUserRole);
+            this.groupBox3.Controls.Add(this.btnAddNewUserRole);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.dgvUsersRoles);
+            this.groupBox3.Location = new System.Drawing.Point(339, 307);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(322, 222);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Users && Roles";
             // 
             // btnDeleteUserRole
             // 
@@ -525,6 +456,44 @@
             this.btnAddNewUserRole.Text = "Add New";
             this.btnAddNewUserRole.UseVisualStyleBackColor = true;
             this.btnAddNewUserRole.Click += new System.EventHandler(this.btnAddNewUserRole_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(154, 149);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Role";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 149);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "UserName";
+            // 
+            // dgvUsersRoles
+            // 
+            this.dgvUsersRoles.AllowUserToAddRows = false;
+            this.dgvUsersRoles.AllowUserToDeleteRows = false;
+            this.dgvUsersRoles.AutoGenerateColumns = false;
+            this.dgvUsersRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsersRoles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.userIdColumn,
+            this.userNameColumn,
+            this.roleIdColumn,
+            this.roleColumn});
+            this.dgvUsersRoles.DataSource = this.getUsersRolesBindingSource;
+            this.dgvUsersRoles.Location = new System.Drawing.Point(6, 19);
+            this.dgvUsersRoles.Name = "dgvUsersRoles";
+            this.dgvUsersRoles.ReadOnly = true;
+            this.dgvUsersRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsersRoles.Size = new System.Drawing.Size(302, 109);
+            this.dgvUsersRoles.TabIndex = 0;
+            this.dgvUsersRoles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsersRoles_CellDoubleClick);
             // 
             // userIdColumn
             // 
@@ -558,6 +527,39 @@
             this.roleColumn.ReadOnly = true;
             this.roleColumn.Width = 110;
             // 
+            // getUsersRolesBindingSource
+            // 
+            this.getUsersRolesBindingSource.DataMember = "GetUsersRoles";
+            this.getUsersRolesBindingSource.DataSource = this.diaxeirhshExoplismouOTEDataSetBindingSource;
+            // 
+            // getUsersTableAdapter
+            // 
+            this.getUsersTableAdapter.ClearBeforeFill = true;
+            // 
+            // getRolesTableAdapter
+            // 
+            this.getRolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // getUsersRolesTableAdapter
+            // 
+            this.getUsersRolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // cbxUserName
+            // 
+            this.cbxUserName.FormattingEnabled = true;
+            this.cbxUserName.Location = new System.Drawing.Point(6, 165);
+            this.cbxUserName.Name = "cbxUserName";
+            this.cbxUserName.Size = new System.Drawing.Size(134, 21);
+            this.cbxUserName.TabIndex = 10;
+            // 
+            // cbxRoles
+            // 
+            this.cbxRoles.FormattingEnabled = true;
+            this.cbxRoles.Location = new System.Drawing.Point(146, 166);
+            this.cbxRoles.Name = "cbxRoles";
+            this.cbxRoles.Size = new System.Drawing.Size(134, 21);
+            this.cbxRoles.TabIndex = 18;
+            // 
             // frmUsersManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,6 +576,8 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getUsersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoles)).EndInit();
@@ -581,8 +585,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsersRoles)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.diaxeirhshExoplismouOTEDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getUsersRolesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -634,13 +636,13 @@
         private System.Windows.Forms.Button btnUpdateUserRole;
         private System.Windows.Forms.Button btnAddNewUserRole;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtRoleUser;
-        private System.Windows.Forms.TextBox txtUserRoleUserName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIdColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userNameColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleIdColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roleColumn;
+        private System.Windows.Forms.ComboBox cbxUserName;
+        private System.Windows.Forms.ComboBox cbxRoles;
 
     }
 }
