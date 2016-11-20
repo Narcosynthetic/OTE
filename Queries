@@ -1,225 +1,10 @@
 USE [DiaxeirhshExoplismouOTE]
 GO
-
-/****** Object:  Table [dbo].[TechIPTV]    Script Date: 20/11/2016 9:32:03 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-SET ANSI_PADDING ON
-GO
-
-CREATE TABLE [dbo].[TechIPTV](
-	[Id] [int] NOT NULL,
-	[SerialNumber] [nvarchar](50) NOT NULL,
-	[Sap] [int] NOT NULL,
-	[UserId] [int] NOT NULL,
-	[HmeromhniaElenxou] [datetime] NOT NULL,
-	[Mac] [varchar](50) NOT NULL,
-	[Trofodotiko] [bit] NOT NULL,
-	[Mhtrikh] [bit] NOT NULL,
-	[HDMI_Port] [bit] NOT NULL,
-	[Scart_Port] [bit] NOT NULL,
-	[Ethernet] [bit] NOT NULL,
-	[Display] [bit] NOT NULL,
-	[AllagiKapaki] [bit] NOT NULL,
-	[AllagiPackBox] [bit] NOT NULL,
-	[AllagiControl] [bit] NOT NULL,
-	[AllagiExtPower] [bit] NOT NULL,
-	[KodikoiXrhsth] [bit] NOT NULL,
-	[FirmwareUpdate] [bit] NOT NULL,
-	[Parathrhseis] [nvarchar](50) NULL,
-	[OkOffUpdate] [int] NOT NULL,
- CONSTRAINT [PK_TechIPTV] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-
-GO
-
-SET ANSI_PADDING OFF
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Hmeromhnia_Elenxou]  DEFAULT (getdate()) FOR [HmeromhniaElenxou]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Trofodotiko]  DEFAULT ((0)) FOR [Trofodotiko]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Mhtrikh]  DEFAULT ((0)) FOR [Mhtrikh]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_HDMI_Port]  DEFAULT ((0)) FOR [HDMI_Port]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Scart_Port]  DEFAULT ((0)) FOR [Scart_Port]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Ethernet]  DEFAULT ((0)) FOR [Ethernet]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Display]  DEFAULT ((0)) FOR [Display]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Allagi_Kapaki]  DEFAULT ((0)) FOR [AllagiKapaki]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Allagi_PackBox]  DEFAULT ((0)) FOR [AllagiPackBox]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Allagi_Control]  DEFAULT ((0)) FOR [AllagiControl]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Allagi_ExtPower]  DEFAULT ((0)) FOR [AllagiExtPower]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_Kodikoi_Xrhsth]  DEFAULT ((0)) FOR [KodikoiXrhsth]
-GO
-
-ALTER TABLE [dbo].[TechIPTV] ADD  CONSTRAINT [DF_TechIPTV_FirmwareUpdte]  DEFAULT ((0)) FOR [FirmwareUpdate]
-GO
-
-ALTER TABLE [dbo].[TechIPTV]  WITH CHECK ADD  CONSTRAINT [FK_TechIPTV_Mhxanhmata] FOREIGN KEY([SerialNumber])
-REFERENCES [dbo].[Mhxanhmata_NOTUSED] ([SerialNumber])
-GO
-
-ALTER TABLE [dbo].[TechIPTV] CHECK CONSTRAINT [FK_TechIPTV_Mhxanhmata]
-GO
-
-ALTER TABLE [dbo].[TechIPTV]  WITH CHECK ADD  CONSTRAINT [FK_TechIPTV_Status] FOREIGN KEY([OkOffUpdate])
-REFERENCES [dbo].[Status] ([Id])
-GO
-
-ALTER TABLE [dbo].[TechIPTV] CHECK CONSTRAINT [FK_TechIPTV_Status]
-GO
-
-ALTER TABLE [dbo].[TechIPTV]  WITH CHECK ADD  CONSTRAINT [FK_TechIPTV_Users] FOREIGN KEY([UserId])
-REFERENCES [dbo].[Users] ([UserId])
-GO
-
-ALTER TABLE [dbo].[TechIPTV] CHECK CONSTRAINT [FK_TechIPTV_Users]
-GO
-
-
-USE [DiaxeirhshExoplismouOTE]
-GO
-
-/****** Object:  Table [dbo].[TechSatellites]    Script Date: 20/11/2016 9:31:48 PM ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
-CREATE TABLE [dbo].[TechSatellites](
-	[Id] [int] IDENTITY(1,1) NOT NULL,
-	[SerialNumber] [nvarchar](50) NOT NULL,
-	[UserId] [int] NOT NULL,
-	[HmeromhniaElenxou] [datetime] NOT NULL,
-	[SNKartas] [nvarchar](50) NOT NULL,
-	[SNDekth] [nvarchar](50) NOT NULL,
-	[Trofodotiko] [bit] NOT NULL,
-	[RF] [bit] NOT NULL,
-	[CardReader] [bit] NOT NULL,
-	[Mhtrikh] [bit] NOT NULL,
-	[HDMI_Port] [bit] NOT NULL,
-	[Scart_Port] [bit] NOT NULL,
-	[Display] [bit] NOT NULL,
-	[Bismata] [bit] NOT NULL,
-	[AllagiPortaki] [bit] NOT NULL,
-	[AllagiKapaki] [bit] NOT NULL,
-	[AllagiPackBox] [bit] NOT NULL,
-	[AllagiControl] [bit] NOT NULL,
-	[AllagiExtPowerSupply] [bit] NOT NULL,
-	[FirmwareUpdate] [bit] NOT NULL,
-	[Parathrhseis] [nvarchar](max) NOT NULL,
-	[OkOffUpdate] [int] NOT NULL,
-	[Sap] [int] NOT NULL,
- CONSTRAINT [PK_TechSatellites] PRIMARY KEY CLUSTERED 
-(
-	[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_HmeromhniaElenxou]  DEFAULT (getdate()) FOR [HmeromhniaElenxou]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_Trofodotiko]  DEFAULT ((0)) FOR [Trofodotiko]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_RF]  DEFAULT ((0)) FOR [RF]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_CardReader]  DEFAULT ((0)) FOR [CardReader]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_Mhtrikh]  DEFAULT ((0)) FOR [Mhtrikh]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_HDMI_Port]  DEFAULT ((0)) FOR [HDMI_Port]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_Scart_Port]  DEFAULT ((0)) FOR [Scart_Port]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_Display]  DEFAULT ((0)) FOR [Display]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_Bismata]  DEFAULT ((0)) FOR [Bismata]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_Allagi_Portaki]  DEFAULT ((0)) FOR [AllagiPortaki]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_Allagi_Kapaki]  DEFAULT ((0)) FOR [AllagiKapaki]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_Allagi_PackBox]  DEFAULT ((0)) FOR [AllagiPackBox]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_Allagi_Control]  DEFAULT ((0)) FOR [AllagiControl]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_Allagi_ExtPowerSupply]  DEFAULT ((0)) FOR [AllagiExtPowerSupply]
-GO
-
-ALTER TABLE [dbo].[TechSatellites] ADD  CONSTRAINT [DF_Sat_FirmwareUpdate]  DEFAULT ((0)) FOR [FirmwareUpdate]
-GO
-
-ALTER TABLE [dbo].[TechSatellites]  WITH CHECK ADD  CONSTRAINT [FK_Sat_Mhxanhmata] FOREIGN KEY([SerialNumber])
-REFERENCES [dbo].[Mhxanhmata_NOTUSED] ([SerialNumber])
-GO
-
-ALTER TABLE [dbo].[TechSatellites] CHECK CONSTRAINT [FK_Sat_Mhxanhmata]
-GO
-
-ALTER TABLE [dbo].[TechSatellites]  WITH CHECK ADD  CONSTRAINT [FK_Sat_Status] FOREIGN KEY([OkOffUpdate])
-REFERENCES [dbo].[Status] ([Id])
-GO
-
-ALTER TABLE [dbo].[TechSatellites] CHECK CONSTRAINT [FK_Sat_Status]
-GO
-
-ALTER TABLE [dbo].[TechSatellites]  WITH CHECK ADD  CONSTRAINT [FK_Sat_Users] FOREIGN KEY([UserId])
-REFERENCES [dbo].[Users] ([UserId])
-GO
-
-ALTER TABLE [dbo].[TechSatellites] CHECK CONSTRAINT [FK_Sat_Users]
-GO
-
-
-USE [DiaxeirhshExoplismouOTE]
-GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create PROCEDURE [dbo].[GetTechnicianStats] 
+create PROCEDURE [dbo].[GetWorkloadStats] 
 (
 	@userId int,
 	@hmeromhniaElenxouApo datetime,
@@ -228,25 +13,29 @@ create PROCEDURE [dbo].[GetTechnicianStats]
 AS
 BEGIN
 	SET NOCOUNT ON;
+
+	DECLARE @TotalModems int
+	DECLARE @TotalIPTVs int
+	DECLARE @TotalSatellites int
 			
-	SELECT COUNT(m.[Id]) TotalModems,
-	COUNT(i.[Id]) TotalIPTVs,
-	COUNT(s.[Id]) TotalSatellites
-
-	FROM [dbo].[TechModem] m,
-	[dbo].[TechIPTV] i,
-	[dbo].[TechSatellites] s
-
-	WHERE m.[UserId] = @userId
+	SELECT @TotalModems = COUNT(m.[Id])
+	FROM [dbo].[TechModem] m
+	WHERE (m.[UserId] = @userId OR @userId = '')
 	AND (m.[HmeromhniaElenxou] >= @hmeromhniaElenxouApo OR @hmeromhniaElenxouApo = '1900-01-01')  
 	AND (m.[HmeromhniaElenxou] <= DATEADD(s, -1, DATEADD(day, 1, DATEADD(day, DATEDIFF(day, 0, @hmeromhniaElenxouEos), 0))) OR @hmeromhniaElenxouEos  = '1900-01-01')
 
-	AND i.[UserId] = @userId
+	SELECT @TotalIPTVs = COUNT(i.[Id])
+	FROM [dbo].[TechIPTV] i
+	WHERE (i.[UserId] = @userId OR @userId = '')
 	AND (i.[HmeromhniaElenxou] >= @hmeromhniaElenxouApo OR @hmeromhniaElenxouApo = '1900-01-01')  
 	AND (i.[HmeromhniaElenxou] <= DATEADD(s, -1, DATEADD(day, 1, DATEADD(day, DATEDIFF(day, 0, @hmeromhniaElenxouEos), 0))) OR @hmeromhniaElenxouEos  = '1900-01-01')
 	
-	AND s.[UserId] = @userId
+
+	SELECT @TotalSatellites = COUNT(s.[Id])
+	FROM [dbo].[TechSatellites] s
+	WHERE (s.[UserId] = @userId OR @userId = '')
 	AND (s.[HmeromhniaElenxou] >= @hmeromhniaElenxouApo OR @hmeromhniaElenxouApo = '1900-01-01')  
 	AND (s.[HmeromhniaElenxou] <= DATEADD(s, -1, DATEADD(day, 1, DATEADD(day, DATEDIFF(day, 0, @hmeromhniaElenxouEos), 0))) OR @hmeromhniaElenxouEos  = '1900-01-01')
 
+	SELECT @TotalModems TotalModems, @TotalIPTVs TotalIPTVs, @TotalSatellites TotalSatellites
 END
