@@ -346,7 +346,7 @@
             this.txtCardSn.Size = new System.Drawing.Size(298, 20);
             this.txtCardSn.TabIndex = 55;
             // 
-            // SatInspection
+            // frmSatInspection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -382,8 +382,9 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "SatInspection";
+            this.Name = "frmSatInspection";
             this.Text = "Sat Inspection";
+            this.Load += new System.EventHandler(this.frmSatInspection_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

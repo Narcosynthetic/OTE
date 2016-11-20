@@ -31,6 +31,18 @@ namespace OTE
             set;
         }
 
+        public string BackColoring
+        {
+            get;
+            set;
+        }
+
+        public string ForeColoring
+        {
+            get;
+            set;
+        }
+
         #endregion
 
         #region Constructors
@@ -39,13 +51,15 @@ namespace OTE
             InitializeComponent();
         }
 
-        public frmMain(int userId, string userName, string[] roles)
+        public frmMain(int userId, string userName, string[] roles, string backColor, string foreColor)
         {
             InitializeComponent();
 
             UserId = userId;
             UserName = userName;
             Roles = roles;
+            BackColoring = backColor;
+            ForeColoring = foreColor;
         }
 
         #endregion
@@ -64,6 +78,13 @@ namespace OTE
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void mniHome_Click(object sender, EventArgs e)
+        {
+            frmHome frmHome = new frmHome();
+            frmHome.MdiParent = this;
+            frmHome.Show();
         }
 
         private void mniModems_Click(object sender, EventArgs e)

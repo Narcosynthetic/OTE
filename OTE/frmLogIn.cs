@@ -73,6 +73,8 @@ namespace OTE
                                 var _userName = dTable.Rows[0]["UserName"].ToString();
                                 var _userId = int.Parse(dTable.Rows[0]["UserID"].ToString());
                                 var _roles = dTable.Rows[0]["Roles"].ToString();
+                                var _backColor = dTable.Rows[0]["BackColor"].ToString();
+                                var _foreColor = dTable.Rows[0]["ForeColor"].ToString();
 
                                 if (String.IsNullOrEmpty(_roles))
                                 {
@@ -82,7 +84,7 @@ namespace OTE
                                 }
 
                                 string[] roles = _roles.Split(new char[] { ',' });
-                                frmMain frmMain = new frmMain(_userId, _userName, roles);
+                                frmMain frmMain = new frmMain(_userId, _userName, roles, _backColor, _foreColor);
                                 frmMain.Show();
                                 this.Hide();
                             }
@@ -97,7 +99,7 @@ namespace OTE
 
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 throw;
             }

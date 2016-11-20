@@ -42,6 +42,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tslMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.mniHome = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,6 +50,7 @@
             // mnuMain
             // 
             this.mnuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mniHome,
             this.mniEquipment,
             this.mniReports,
             this.mniAdministrator});
@@ -126,7 +128,7 @@
             // 
             this.mniUsersRoles.Enabled = false;
             this.mniUsersRoles.Name = "mniUsersRoles";
-            this.mniUsersRoles.Size = new System.Drawing.Size(146, 22);
+            this.mniUsersRoles.Size = new System.Drawing.Size(152, 22);
             this.mniUsersRoles.Text = "Users && Roles";
             this.mniUsersRoles.Click += new System.EventHandler(this.mniUsersRoles_Click);
             // 
@@ -151,6 +153,13 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            // 
+            // mniHome
+            // 
+            this.mniHome.Name = "mniHome";
+            this.mniHome.Size = new System.Drawing.Size(52, 20);
+            this.mniHome.Text = "Home";
+            this.mniHome.Click += new System.EventHandler(this.mniHome_Click);
             // 
             // frmMain
             // 
@@ -191,5 +200,6 @@
         private System.Windows.Forms.ToolStripMenuItem mniUsersRoles;
         private System.Windows.Forms.ToolStripMenuItem mniReport1;
         private System.Windows.Forms.ToolStripMenuItem mniReport2;
+        private System.Windows.Forms.ToolStripMenuItem mniHome;
     }
 }
