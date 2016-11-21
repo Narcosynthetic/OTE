@@ -50,6 +50,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DiaxeirhshExoplismouOTEDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frmRptStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptStatistics.Designer.cs">
+      <DependentUpon>frmRptStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptWorkload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptWorkload.Designer.cs">
+      <DependentUpon>frmRptWorkload.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers.cs" />
     <Compile Include="frmLogIn.cs">
       <SubType>Form</SubType>
@@ -83,11 +95,11 @@
     <Compile Include="frmSapsManagement.Designer.cs">
       <DependentUpon>frmSapsManagement.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSatInspection.cs">
+    <Compile Include="frmSatelliteInspection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSatInspection.Designer.cs">
-      <DependentUpon>frmSatInspection.cs</DependentUpon>
+    <Compile Include="frmSatelliteInspection.Designer.cs">
+      <DependentUpon>frmSatelliteInspection.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsersManagement.cs">
       <SubType>Form</SubType>
@@ -107,6 +119,12 @@
     <EmbeddedResource Include="frmModemInspection.resx">
       <DependentUpon>frmModemInspection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRptStatistics.resx">
+      <DependentUpon>frmRptStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptWorkload.resx">
+      <DependentUpon>frmRptWorkload.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -119,8 +137,8 @@
     <EmbeddedResource Include="frmSapsManagement.resx">
       <DependentUpon>frmSapsManagement.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSatInspection.resx">
-      <DependentUpon>frmSatInspection.cs</DependentUpon>
+    <EmbeddedResource Include="frmSatelliteInspection.resx">
+      <DependentUpon>frmSatelliteInspection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsersManagement.resx">
       <DependentUpon>frmUsersManagement.cs</DependentUpon>

@@ -32,6 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSapsManagement));
             this.sAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dvgSap = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TyposId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TyposDescr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getSapsDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.diaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
             this.txtSap = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,13 +46,7 @@
             this.btnDeleteSap = new System.Windows.Forms.Button();
             this.cbxCategory = new System.Windows.Forms.ComboBox();
             this.lblErrSap = new System.Windows.Forms.Label();
-            this.getSapsDetailsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.diaxeirhshExoplismouOTEDataSet = new OTE.DiaxeirhshExoplismouOTEDataSet();
             this.getSapsDetailsTableAdapter = new OTE.DiaxeirhshExoplismouOTEDataSetTableAdapters.GetSapsDetailsTableAdapter();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TyposId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TyposDescr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.sAPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dvgSap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getSapsDetailsBindingSource)).BeginInit();
@@ -65,101 +65,13 @@
             this.TyposId,
             this.TyposDescr});
             this.dvgSap.DataSource = this.getSapsDetailsBindingSource;
-            this.dvgSap.Location = new System.Drawing.Point(112, 28);
+            this.dvgSap.Location = new System.Drawing.Point(12, 22);
             this.dvgSap.Name = "dvgSap";
             this.dvgSap.ReadOnly = true;
             this.dvgSap.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgSap.Size = new System.Drawing.Size(466, 227);
+            this.dvgSap.Size = new System.Drawing.Size(254, 281);
             this.dvgSap.TabIndex = 0;
             this.dvgSap.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgSap_CellContentDoubleClick);
-            // 
-            // txtSap
-            // 
-            this.txtSap.Location = new System.Drawing.Point(111, 281);
-            this.txtSap.Name = "txtSap";
-            this.txtSap.Size = new System.Drawing.Size(100, 20);
-            this.txtSap.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(109, 266);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "SAP";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(223, 266);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Category";
-            // 
-            // btnAddSap
-            // 
-            this.btnAddSap.Location = new System.Drawing.Point(112, 336);
-            this.btnAddSap.Name = "btnAddSap";
-            this.btnAddSap.Size = new System.Drawing.Size(75, 23);
-            this.btnAddSap.TabIndex = 6;
-            this.btnAddSap.Text = "Add";
-            this.btnAddSap.UseVisualStyleBackColor = true;
-            this.btnAddSap.Click += new System.EventHandler(this.btnAddSap_Click);
-            // 
-            // btnUpdateSap
-            // 
-            this.btnUpdateSap.Location = new System.Drawing.Point(220, 336);
-            this.btnUpdateSap.Name = "btnUpdateSap";
-            this.btnUpdateSap.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateSap.TabIndex = 7;
-            this.btnUpdateSap.Text = "Update";
-            this.btnUpdateSap.UseVisualStyleBackColor = true;
-            this.btnUpdateSap.Click += new System.EventHandler(this.btnUpdateSap_Click);
-            // 
-            // btnDeleteSap
-            // 
-            this.btnDeleteSap.Location = new System.Drawing.Point(325, 335);
-            this.btnDeleteSap.Name = "btnDeleteSap";
-            this.btnDeleteSap.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteSap.TabIndex = 8;
-            this.btnDeleteSap.Text = "Delete";
-            this.btnDeleteSap.UseVisualStyleBackColor = true;
-            this.btnDeleteSap.Click += new System.EventHandler(this.btnDeleteSap_Click);
-            // 
-            // cbxCategory
-            // 
-            this.cbxCategory.FormattingEnabled = true;
-            this.cbxCategory.Location = new System.Drawing.Point(226, 280);
-            this.cbxCategory.Name = "cbxCategory";
-            this.cbxCategory.Size = new System.Drawing.Size(174, 21);
-            this.cbxCategory.TabIndex = 9;
-            // 
-            // lblErrSap
-            // 
-            this.lblErrSap.AutoSize = true;
-            this.lblErrSap.ForeColor = System.Drawing.Color.Red;
-            this.lblErrSap.Location = new System.Drawing.Point(109, 304);
-            this.lblErrSap.Name = "lblErrSap";
-            this.lblErrSap.Size = new System.Drawing.Size(51, 13);
-            this.lblErrSap.TabIndex = 27;
-            this.lblErrSap.Text = "@@@@";
-            this.lblErrSap.Visible = false;
-            // 
-            // getSapsDetailsBindingSource
-            // 
-            this.getSapsDetailsBindingSource.DataMember = "GetSapsDetails";
-            this.getSapsDetailsBindingSource.DataSource = this.diaxeirhshExoplismouOTEDataSet;
-            // 
-            // diaxeirhshExoplismouOTEDataSet
-            // 
-            this.diaxeirhshExoplismouOTEDataSet.DataSetName = "DiaxeirhshExoplismouOTEDataSet";
-            this.diaxeirhshExoplismouOTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getSapsDetailsTableAdapter
-            // 
-            this.getSapsDetailsTableAdapter.ClearBeforeFill = true;
             // 
             // Id
             // 
@@ -191,11 +103,99 @@
             this.TyposDescr.Name = "TyposDescr";
             this.TyposDescr.ReadOnly = true;
             // 
+            // getSapsDetailsBindingSource
+            // 
+            this.getSapsDetailsBindingSource.DataMember = "GetSapsDetails";
+            this.getSapsDetailsBindingSource.DataSource = this.diaxeirhshExoplismouOTEDataSet;
+            // 
+            // diaxeirhshExoplismouOTEDataSet
+            // 
+            this.diaxeirhshExoplismouOTEDataSet.DataSetName = "DiaxeirhshExoplismouOTEDataSet";
+            this.diaxeirhshExoplismouOTEDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // txtSap
+            // 
+            this.txtSap.Location = new System.Drawing.Point(12, 336);
+            this.txtSap.Name = "txtSap";
+            this.txtSap.Size = new System.Drawing.Size(100, 20);
+            this.txtSap.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "SAP";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(124, 321);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Category";
+            // 
+            // btnAddSap
+            // 
+            this.btnAddSap.Location = new System.Drawing.Point(13, 391);
+            this.btnAddSap.Name = "btnAddSap";
+            this.btnAddSap.Size = new System.Drawing.Size(75, 23);
+            this.btnAddSap.TabIndex = 6;
+            this.btnAddSap.Text = "Add";
+            this.btnAddSap.UseVisualStyleBackColor = true;
+            this.btnAddSap.Click += new System.EventHandler(this.btnAddSap_Click);
+            // 
+            // btnUpdateSap
+            // 
+            this.btnUpdateSap.Location = new System.Drawing.Point(96, 391);
+            this.btnUpdateSap.Name = "btnUpdateSap";
+            this.btnUpdateSap.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateSap.TabIndex = 7;
+            this.btnUpdateSap.Text = "Update";
+            this.btnUpdateSap.UseVisualStyleBackColor = true;
+            this.btnUpdateSap.Click += new System.EventHandler(this.btnUpdateSap_Click);
+            // 
+            // btnDeleteSap
+            // 
+            this.btnDeleteSap.Location = new System.Drawing.Point(179, 391);
+            this.btnDeleteSap.Name = "btnDeleteSap";
+            this.btnDeleteSap.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteSap.TabIndex = 8;
+            this.btnDeleteSap.Text = "Delete";
+            this.btnDeleteSap.UseVisualStyleBackColor = true;
+            this.btnDeleteSap.Click += new System.EventHandler(this.btnDeleteSap_Click);
+            // 
+            // cbxCategory
+            // 
+            this.cbxCategory.FormattingEnabled = true;
+            this.cbxCategory.Location = new System.Drawing.Point(127, 335);
+            this.cbxCategory.Name = "cbxCategory";
+            this.cbxCategory.Size = new System.Drawing.Size(174, 21);
+            this.cbxCategory.TabIndex = 9;
+            // 
+            // lblErrSap
+            // 
+            this.lblErrSap.AutoSize = true;
+            this.lblErrSap.ForeColor = System.Drawing.Color.Red;
+            this.lblErrSap.Location = new System.Drawing.Point(10, 359);
+            this.lblErrSap.Name = "lblErrSap";
+            this.lblErrSap.Size = new System.Drawing.Size(51, 13);
+            this.lblErrSap.TabIndex = 27;
+            this.lblErrSap.Text = "@@@@";
+            this.lblErrSap.Visible = false;
+            // 
+            // getSapsDetailsTableAdapter
+            // 
+            this.getSapsDetailsTableAdapter.ClearBeforeFill = true;
+            // 
             // frmSapsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 420);
+            this.ClientSize = new System.Drawing.Size(388, 442);
             this.Controls.Add(this.lblErrSap);
             this.Controls.Add(this.cbxCategory);
             this.Controls.Add(this.btnDeleteSap);

@@ -30,19 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnuMain = new System.Windows.Forms.MenuStrip();
+            this.mniHome = new System.Windows.Forms.ToolStripMenuItem();
             this.mniEquipment = new System.Windows.Forms.ToolStripMenuItem();
             this.mniModemsInspection = new System.Windows.Forms.ToolStripMenuItem();
             this.mniSatelitesInspection = new System.Windows.Forms.ToolStripMenuItem();
             this.mniSapManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.mniReports = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniReport1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniReport2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniWorkload = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniStatistics = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAdministrator = new System.Windows.Forms.ToolStripMenuItem();
             this.mniUsersRoles = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tslMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.mniHome = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniIptvsInspection = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -60,11 +61,19 @@
             this.mnuMain.TabIndex = 1;
             this.mnuMain.Text = "File";
             // 
+            // mniHome
+            // 
+            this.mniHome.Name = "mniHome";
+            this.mniHome.Size = new System.Drawing.Size(52, 20);
+            this.mniHome.Text = "Home";
+            this.mniHome.Click += new System.EventHandler(this.mniHome_Click);
+            // 
             // mniEquipment
             // 
             this.mniEquipment.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniModemsInspection,
             this.mniSatelitesInspection,
+            this.mniIptvsInspection,
             this.mniSapManagement});
             this.mniEquipment.Name = "mniEquipment";
             this.mniEquipment.Size = new System.Drawing.Size(77, 20);
@@ -96,25 +105,27 @@
             // mniReports
             // 
             this.mniReports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mniReport1,
-            this.mniReport2});
+            this.mniWorkload,
+            this.mniStatistics});
             this.mniReports.Name = "mniReports";
             this.mniReports.Size = new System.Drawing.Size(59, 20);
             this.mniReports.Text = "Reports";
             // 
-            // mniReport1
+            // mniWorkload
             // 
-            this.mniReport1.Enabled = false;
-            this.mniReport1.Name = "mniReport1";
-            this.mniReport1.Size = new System.Drawing.Size(118, 22);
-            this.mniReport1.Text = "Report 1";
+            this.mniWorkload.Enabled = false;
+            this.mniWorkload.Name = "mniWorkload";
+            this.mniWorkload.Size = new System.Drawing.Size(125, 22);
+            this.mniWorkload.Text = "Workload";
+            this.mniWorkload.Click += new System.EventHandler(this.mniWorkload_Click);
             // 
-            // mniReport2
+            // mniStatistics
             // 
-            this.mniReport2.Enabled = false;
-            this.mniReport2.Name = "mniReport2";
-            this.mniReport2.Size = new System.Drawing.Size(118, 22);
-            this.mniReport2.Text = "Report 2";
+            this.mniStatistics.Enabled = false;
+            this.mniStatistics.Name = "mniStatistics";
+            this.mniStatistics.Size = new System.Drawing.Size(125, 22);
+            this.mniStatistics.Text = "Statistics";
+            this.mniStatistics.Click += new System.EventHandler(this.mniStatistics_Click);
             // 
             // mniAdministrator
             // 
@@ -128,7 +139,7 @@
             // 
             this.mniUsersRoles.Enabled = false;
             this.mniUsersRoles.Name = "mniUsersRoles";
-            this.mniUsersRoles.Size = new System.Drawing.Size(152, 22);
+            this.mniUsersRoles.Size = new System.Drawing.Size(146, 22);
             this.mniUsersRoles.Text = "Users && Roles";
             this.mniUsersRoles.Click += new System.EventHandler(this.mniUsersRoles_Click);
             // 
@@ -154,12 +165,12 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // mniHome
+            // mniIptvsInspection
             // 
-            this.mniHome.Name = "mniHome";
-            this.mniHome.Size = new System.Drawing.Size(52, 20);
-            this.mniHome.Text = "Home";
-            this.mniHome.Click += new System.EventHandler(this.mniHome_Click);
+            this.mniIptvsInspection.Enabled = false;
+            this.mniIptvsInspection.Name = "mniIptvsInspection";
+            this.mniIptvsInspection.Size = new System.Drawing.Size(179, 22);
+            this.mniIptvsInspection.Text = "IPTV\'s Inspection";
             // 
             // frmMain
             // 
@@ -198,8 +209,9 @@
         private System.Windows.Forms.ToolStripStatusLabel tslMessage;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripMenuItem mniUsersRoles;
-        private System.Windows.Forms.ToolStripMenuItem mniReport1;
-        private System.Windows.Forms.ToolStripMenuItem mniReport2;
+        private System.Windows.Forms.ToolStripMenuItem mniWorkload;
+        private System.Windows.Forms.ToolStripMenuItem mniStatistics;
         private System.Windows.Forms.ToolStripMenuItem mniHome;
+        private System.Windows.Forms.ToolStripMenuItem mniIptvsInspection;
     }
 }

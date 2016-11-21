@@ -10,16 +10,15 @@ using System.Windows.Forms;
 
 namespace OTE
 {
-    public partial class frmSatInspection : Form
+    public partial class frmSatelliteInspection : Form
     {
-        public frmSatInspection()
+        public frmSatelliteInspection()
         {
             InitializeComponent();
         }
 
         private void frmSatInspection_Load(object sender, EventArgs e)
         {
-
             ColorConverter cc = new ColorConverter();
             if (!string.IsNullOrEmpty(((frmMain)this.MdiParent).BackColoring))
                 this.BackColor = (Color)cc.ConvertFromString(((frmMain)this.MdiParent).BackColoring);
