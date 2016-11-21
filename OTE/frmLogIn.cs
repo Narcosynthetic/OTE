@@ -28,11 +28,11 @@ namespace OTE
         {
             try
             {
-                //var username = txtUserName.Text.Trim();
-                //var password = txtPassword.Text.Trim();
+                var username = txtUserName.Text.Trim();
+                var password = txtPassword.Text.Trim();
 
-                var username = "papas";
-                var password = "papas";
+                //var username = "papas";
+                //var password = "papas";
 
                 bool isValid = true;
                 if (String.IsNullOrEmpty(username))
