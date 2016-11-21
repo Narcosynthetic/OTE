@@ -1,19 +1,149 @@
 USE [DiaxeirhshExoplismouOTE]
 GO
-/****** Object:  StoredProcedure [dbo].[GetTypoiMhxanhmatwn]    Script Date: 21-Nov-16 1:12:19 AM ******/
+/****** Object:  StoredProcedure [dbo].[GetRptStatisticsBySap]    Script Date: 21/11/2016 9:34:55 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER PROCEDURE [dbo].[GetTypoiMhxanhmatwn] 
-
+ALTER PROCEDURE [dbo].[GetRptStatisticsBySap] 
+(
+	@userId int,
+	@hmeromhniaElenxouApo datetime,
+	@hmeromhniaElenxouEos datetime
+)
 AS
 BEGIN
 	SET NOCOUNT ON;
-			
-	SELECT [Id]
-      ,[TyposDescr]
-	FROM [dbo].[TypoiMhxanhmatwn] 
 	
-     
+	SELECT max(s.Sap) SAP, COUNT(m.Id) as TotalModems
+	FROM [TechModem] m
+	LEFT JOIN [dbo].[SAP] s ON m.Sap = s.Id
+
+	WHERE (m.[UserId] = @userId OR @userId = '-1')
+	AND (m.[HmeromhniaElenxou] >= @hmeromhniaElenxouApo OR @hmeromhniaElenxouApo = '1900-01-01')  
+	AND (m.[HmeromhniaElenxou] <= DATEADD(s, -1, DATEADD(day, 1, DATEADD(day, DATEDIFF(day, 0, @hmeromhniaElenxouEos), 0))) OR @hmeromhniaElenxouEos  = '1900-01-01')
+	
+	GROUP BY m.Sap
+	ORDER BY m.Sap
+END
+
+USE [DiaxeirhshExoplismouOTE]
+GO
+/****** Object:  StoredProcedure [dbo].[GetRptStatisticsByUser]    Script Date: 21/11/2016 9:35:09 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[GetRptStatisticsByUser] 
+(
+	@userId int,
+	@hmeromhniaElenxouApo datetime,
+	@hmeromhniaElenxouEos datetime
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	SELECT MAX(u.LastName) + ' ' + MAX(u.FirstName) [UserFullName],
+	CONVERT(VARCHAR(2), MONTH([HmeromhniaElenxou])) + '/' + CONVERT(VARCHAR(4), YEAR([HmeromhniaElenxou])) [InspectionDate] ,
+	COUNT(m.Id) as TotalModems
+	--, max(s.Sap) SAP
+	FROM [TechModem] m
+	LEFT JOIN [dbo].[Users] u ON m.[UserId] = u.[UserId]
+	LEFT JOIN [dbo].[SAP] s ON m.Sap = s.Id
+	
+	WHERE (m.[UserId] = @userId OR @userId = '-1')
+	AND (m.[HmeromhniaElenxou] >= @hmeromhniaElenxouApo OR @hmeromhniaElenxouApo = '1900-01-01')  
+	AND (m.[HmeromhniaElenxou] <= DATEADD(s, -1, DATEADD(day, 1, DATEADD(day, DATEDIFF(day, 0, @hmeromhniaElenxouEos), 0))) OR @hmeromhniaElenxouEos  = '1900-01-01')
+	
+	GROUP BY MONTH([HmeromhniaElenxou]), YEAR([HmeromhniaElenxou]), m.UserId--, m.Sap
+	ORDER BY MAX(u.LastName) + ' ' + MAX(u.FirstName)
+
+END
+
+USE [DiaxeirhshExoplismouOTE]
+GO
+/****** Object:  StoredProcedure [dbo].[GetRptWorkload]    Script Date: 21/11/2016 9:35:18 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[GetRptWorkload] 
+(
+	@userId int,
+	@hmeromhniaElenxouApo datetime,
+	@hmeromhniaElenxouEos datetime
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SELECT 
+		[LastName] + ' ' + [FirstName] [UserFullName]
+		,[SerialNumber]
+		,sp.[Sap]
+		,[HmeromhniaElenxou]
+		,[Power]
+		,[Dsl]
+		,[Internet]
+		,[Wlan]
+		,[Wps]
+		,[Lan1]
+		,[Lan2]
+		,[Lan3]
+		,[Stb]
+		,[AllagiKereas]
+		,[AllagiLed]
+		,[AllagiTrofodotiko]
+		,[AllagiKapaki]
+		,[AllagiVismatosTrofodosias]
+		,[AllagiPackBox]
+		,[AllagiFirmware]
+		,[Paratiriseis]
+		,s.StatusDescr
+	FROM [dbo].[TechModem] m
+	LEFT JOIN [dbo].[Users] u ON m.[UserId] = u.[UserId]
+	LEFT JOIN [dbo].[Status] s ON m.OkOffUpdate = s.Id
+	LEFT JOIN [dbo].[SAP] sp ON m.Sap = sp.Id
+    
+	WHERE (m.[UserId] = @userId OR @userId = -1)
+	AND (m.[HmeromhniaElenxou] >= @hmeromhniaElenxouApo OR @hmeromhniaElenxouApo = '1900-01-01')  
+	AND (m.[HmeromhniaElenxou] <= DATEADD(s, -1, DATEADD(day, 1, DATEADD(day, DATEDIFF(day, 0, @hmeromhniaElenxouEos), 0))) OR @hmeromhniaElenxouEos  = '1900-01-01')
+END
+
+USE [DiaxeirhshExoplismouOTE]
+GO
+/****** Object:  StoredProcedure [dbo].[GetLatestAction]    Script Date: 21/11/2016 9:35:43 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[GetLatestAction] 
+(
+	@userId int-- = 100
+)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	
+	DECLARE @ModemDate DATETIME
+	DECLARE @SatelliteDate DATETIME
+	DECLARE @IptvDate DATETIME
+
+	SELECT @ModemDate = max([HmeromhniaElenxou]) 
+	FROM [dbo].[TechModem]
+	WHERE [UserId] = @userId
+	
+	SELECT @SatelliteDate = max([HmeromhniaElenxou]) 
+	FROM [dbo].[TechSatellites]
+	WHERE [UserId] = @userId
+	
+	SELECT @IptvDate = max([HmeromhniaElenxou]) 
+	FROM [dbo].[TechIPTV]
+	WHERE [UserId] = @userId
+
+	SELECT 
+		ISNULL(@ModemDate, '1900-01-01') ModemDate, 
+		ISNULL(@SatelliteDate, '1900-01-01') SatelliteDate, 
+		ISNULL(@IptvDate, '1900-01-01') IptvDate
+
 END
