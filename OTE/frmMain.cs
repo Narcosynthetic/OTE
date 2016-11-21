@@ -107,6 +107,11 @@ namespace OTE
             LoadModemsForm();
         }
 
+        private void mniSatelitesInspection_Click(object sender, EventArgs e)
+        {
+            LoadSatelliteForm();
+        }
+
         private void mniSapManagement_Click(object sender, EventArgs e)
         {
             frmSapsManagement frmSapsManagement = new frmSapsManagement();
@@ -182,7 +187,7 @@ namespace OTE
                     {
                         if (DateTime.Parse(habitsDT.Rows[0]["SatelliteDate"].ToString()) > DateTime.Parse(habitsDT.Rows[0]["IptvDate"].ToString()))
                         {
-                            //TODO: LoadSatelliteForm();
+                            LoadSatelliteForm();
                         }
                         else
                         {
@@ -213,6 +218,15 @@ namespace OTE
             frmModemInspection.StartPosition = FormStartPosition.Manual;
             frmModemInspection.Location = new Point(0, 0);
             frmModemInspection.Show();
+        }
+
+        private void LoadSatelliteForm()
+        {
+            frmSatelliteInspection frmSatelliteInspection = new frmSatelliteInspection();
+            frmSatelliteInspection.MdiParent = this;
+            frmSatelliteInspection.StartPosition = FormStartPosition.Manual;
+            frmSatelliteInspection.Location = new Point(0, 0);
+            frmSatelliteInspection.Show();
         }
 
         private DataTable GetLatestAction()

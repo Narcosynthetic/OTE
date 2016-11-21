@@ -34,6 +34,7 @@
             this.mniEquipment = new System.Windows.Forms.ToolStripMenuItem();
             this.mniModemsInspection = new System.Windows.Forms.ToolStripMenuItem();
             this.mniSatelitesInspection = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniIptvsInspection = new System.Windows.Forms.ToolStripMenuItem();
             this.mniSapManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.mniReports = new System.Windows.Forms.ToolStripMenuItem();
             this.mniWorkload = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +44,6 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tslMessage = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.mniIptvsInspection = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuMain.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +93,14 @@
             this.mniSatelitesInspection.Name = "mniSatelitesInspection";
             this.mniSatelitesInspection.Size = new System.Drawing.Size(179, 22);
             this.mniSatelitesInspection.Text = "Satellites Inspection";
+            this.mniSatelitesInspection.Click += new System.EventHandler(this.mniSatelitesInspection_Click);
+            // 
+            // mniIptvsInspection
+            // 
+            this.mniIptvsInspection.Enabled = false;
+            this.mniIptvsInspection.Name = "mniIptvsInspection";
+            this.mniIptvsInspection.Size = new System.Drawing.Size(179, 22);
+            this.mniIptvsInspection.Text = "IPTV\'s Inspection";
             // 
             // mniSapManagement
             // 
@@ -164,13 +172,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-            // 
-            // mniIptvsInspection
-            // 
-            this.mniIptvsInspection.Enabled = false;
-            this.mniIptvsInspection.Name = "mniIptvsInspection";
-            this.mniIptvsInspection.Size = new System.Drawing.Size(179, 22);
-            this.mniIptvsInspection.Text = "IPTV\'s Inspection";
             // 
             // frmMain
             // 
